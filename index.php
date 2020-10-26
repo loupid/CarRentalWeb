@@ -9,10 +9,11 @@
 </head>
 <body>
     <header>
+        <button type="submit" id="btn_burger"><i class="fas fa-bars"></i></button>
         <img class="logo" src="Images/Logo.PNG" alt="logo">
         <div class="search">
             <input type="text" class="search_box" placeholder="Rechercher...">
-            <button type="submit" class="btn_search"><i class="fa fa-search"></i></button>
+            <button type="submit" id="btn_search"><i class="fa fa-search"></i></button>
         </div>
         <nav>
             <ul class="nav_links">

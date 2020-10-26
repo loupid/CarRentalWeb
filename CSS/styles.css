@@ -1,10 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 @media only screen and (max-width:620px) {
-    /* For mobile phones: */
-    .menu, .main, .right {
-        width:100%;
-    }
+
 }
 
 body {
@@ -31,7 +28,7 @@ header {
 .logo {
     cursor: pointer;
     margin-right: auto;
-    width: 9%;
+    width: 8%;
 }
 
 .nav_links {
@@ -67,7 +64,7 @@ button:hover {
 }
 
 .search {
-    width: 40%;
+    width: 35%;
     display: flex;
     margin-right: 5%;
 }
@@ -88,7 +85,7 @@ button:hover {
     box-shadow: 0 0 5px #dc483c;
 }
 
-.btn_search{
+#btn_search{
     width: 40px;
     height: 36px;
     border: 1px solid #dc483c;
@@ -97,4 +94,24 @@ button:hover {
     border-radius: 0 5px 5px 0;
     cursor: pointer;
     font-size: 20px;
+}
+
+#btn_burger{
+    width: 50px;
+    height: 50px;
+    background: #24252A;
+    margin-right: 5px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 20px;
+    border: none;
+}
+
+#btn_burger i:hover{
+    color: #fd5e53;
+}
+
+#btn_burger i{
+    font-size: 30px;
+    color: white;
 }
