@@ -1,10 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
-
+@import "topNavBar.css";
+@import "advancedFilter.css";
 @media only screen and (max-width:620px) {
 
 }
 
 body {
+    background-color:  #f8f9f9;
     padding: 0;
     margin: 0;
 }
@@ -17,101 +19,22 @@ body {
     text-decoration: none;
 }
 
-header {
+.container{
     display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    background-color: #24252A;
-    padding: 20px 2%;
 }
 
-.logo {
-    cursor: pointer;
-    margin-right: auto;
-    width: 8%;
-}
-
-.nav_links {
-    list-style: none;
-}
-
-.nav_links li {
-    display: inline-block;
-    padding: 0 20px;
-}
-
-.nav_links li a {
-    transition: all 0.3s ease 0s;
-}
-
-.nav_links li a:hover {
-    color: #F39C12;
-}
-
-#btn_login {
-    margin-left: 20px;
-    padding: 9px 25px;
-    background: linear-gradient(135deg, #e55e0d 0%, #dc483c 100%);
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: all 0.3s ease 0s;
-}
-
-button:hover {
-    background-color: #F39C12;
+.container * {
+    font-size: 30px;
     color: #000000;
 }
 
-.search {
-    width: 35%;
+.advanced_filters{
+    width: 15%;
+    background-color: yellow;
+    height: 100%;
+}
+
+#main_body{
     display: flex;
-    margin-right: 5%;
-}
-
-.search_box {
-    width: 100%;
-    border: 3px solid #fd5e53;
-    border-radius: 5px 0 0 5px;
-    border-right: none;
-    padding: 5px;
-    height: 20px;
-    outline: none;
-    color: #9dbfaf;
-}
-
-.search_box:focus {
-    color: #000;
-    box-shadow: 0 0 5px #dc483c;
-}
-
-#btn_search{
-    width: 40px;
-    height: 36px;
-    border: 1px solid #dc483c;
-    background: #dc483c;
-    text-align: center;
-    border-radius: 0 5px 5px 0;
-    cursor: pointer;
-    font-size: 20px;
-}
-
-#btn_burger{
-    width: 50px;
-    height: 50px;
-    background: #24252A;
-    margin-right: 5px;
-    text-align: center;
-    cursor: pointer;
-    font-size: 20px;
-    border: none;
-}
-
-#btn_burger i:hover{
-    color: #fd5e53;
-}
-
-#btn_burger i{
-    font-size: 30px;
-    color: white;
+    flex-direction: column;
 }

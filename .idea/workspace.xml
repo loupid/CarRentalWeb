@@ -25,10 +25,15 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="20460463-a546-434e-8452-f21a5f821285" name="Default Changelist" comment="Add top navbar design">
+    <list default="true" id="20460463-a546-434e-8452-f21a5f821285" name="Default Changelist" comment="burger button">
+      <change afterPath="$PROJECT_DIR$/CSS/advancedFilter.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CSS/quickFilter.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CSS/topNavBar.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HTML/carsList.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JS/Main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CSS/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +48,7 @@
       <list>
         <option value="HTML File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -96,7 +102,9 @@
       <option name="presentableId" value="Default" />
       <updated>1603729263487</updated>
       <workItem from="1603729264555" duration="319000" />
-      <workItem from="1603730837694" duration="14295000" />
+      <workItem from="1603730837694" duration="15719000" />
+      <workItem from="1603900264629" duration="6254000" />
+      <workItem from="1604335882890" duration="5979000" />
     </task>
     <task id="LOCAL-00001" summary="Add top navbar design">
       <created>1603749675732</created>
@@ -105,7 +113,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603749675732</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="burger button">
+      <created>1603751462901</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1603751462902</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -133,11 +148,13 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Add top navbar design" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add top navbar design" />
+    <MESSAGE value="burger button" />
+    <option name="LAST_COMMIT_MESSAGE" value="burger button" />
   </component>
   <component name="WindowStateProjectService">
     <state x="349" y="0" key="#PHP" timestamp="1603737720503">
@@ -148,11 +165,11 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.689@0.0.1280.689" timestamp="1603737705464" />
-    <state x="493" y="173" key="FileChooserDialogImpl" timestamp="1603745378531">
+    <state x="493" y="173" key="FileChooserDialogImpl" timestamp="1603900581227">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="740" y="261" key="FileChooserDialogImpl/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1603729499866" />
-    <state x="493" y="173" key="FileChooserDialogImpl/0.0.1280.689@0.0.1280.689" timestamp="1603745378531" />
+    <state x="493" y="173" key="FileChooserDialogImpl/0.0.1280.689@0.0.1280.689" timestamp="1603900581227" />
     <state x="784" y="422" key="Github.CreateGistDialog" timestamp="1603729541805">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -165,11 +182,11 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="477" y="269" key="NewPhpFileDialog/0.0.1280.689@0.0.1280.689" timestamp="1603735848366" />
-    <state x="368" y="156" key="Vcs.Push.Dialog.v2" timestamp="1603749714563">
+    <state x="368" y="156" key="Vcs.Push.Dialog.v2" timestamp="1603751468658">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1603729524558" />
-    <state x="368" y="156" key="Vcs.Push.Dialog.v2/0.0.1280.689@0.0.1280.689" timestamp="1603749714563" />
+    <state x="368" y="156" key="Vcs.Push.Dialog.v2/0.0.1280.689@0.0.1280.689" timestamp="1603751468658" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1603729568473">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
