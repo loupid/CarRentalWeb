@@ -3,6 +3,8 @@
 @import "advancedFilter.css";
 @import "quickFilter.css";
 @import "cardview.css";
+
+/*TODO Exploration for responsive*/
 @media only screen and (max-width:620px) {
 
 }
