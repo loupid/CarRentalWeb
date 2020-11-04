@@ -8,8 +8,7 @@ function openNav() {
 function closeNav() {
     $("#mySidenav").css({"width": "0"});
     $("#main_body").css({"marginLeft": "0"});
-    $("#icon_btn_burger").css({"color": "#ffffff"});
-    $("#icon_btn_burger").hover(function () {
+    $("#icon_btn_burger").css({"color": "#ffffff"}).hover(function () {
         $(this).css("color", "#fd5e53")
     }, function () {
         $(this).css("color", "#ffffff")
