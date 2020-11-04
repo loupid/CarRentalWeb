@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 @import "topNavBar.css";
 @import "advancedFilter.css";
+@import "quickFilter.css";
 @media only screen and (max-width:620px) {
 
 }

@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+
+.quick_filter{
+    margin: 0 30%;
+    width: 81.3%;
+    height: 400px;
+    padding: 2% 6%;
+    background-color: #E5E7E9;
+    transition: 0.5s;
+}
+
+.quick_filter .qf_title {
+    font-family: 'Russo One', sans-serif;
+    font-size: 35px;
+}
+
+.quick_filter .qf_description {
+    font-size: 20px;
+}
+
+.quick_filter .price_range{
+    display: flex;
+    margin: 5px 0;
+    width: 100%;
+}
+
+.quick_filter .qf_localisation{
+    display: flex;
+    margin: 5px 0;
+    width: 100%;
+}
+
+.quick_filter input {
+    font-size: 20px;
+}
+
+#qf_btn_search {
+    width: 98.9%;
+    padding: 9px 25px;
+    background: linear-gradient(135deg,#ff690f 0%,#e8381b 100%);
+    color: white;
+    font-size: 30px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+#qf_btn_search:hover {
+    background-color: #F39C12;
+    color: #000000;
+}
+
+.input_container {
+    width: 100%;
+}
+
+.input_container i {
+    position: absolute;
+}
+
+.input_container .icon {
+    padding: 10px 20px;
+    font-size: 25px;
+    text-align: left;
+}
+.field {
+    padding: 10px 10px 10px 60px;
+    font-size: 20px;
+    font-weight: 500;
+    border: none;
+}
+
+#min_price {
+    margin-right: 5px;
+}
+
+#number_seats {
+    width: 88.2%;
+    margin-bottom: 5px;
+}

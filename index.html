@@ -39,8 +39,33 @@
 
     <div id="main_body">
         <div class="quick_filter">
-            <h1>Location de véhicule au Canada</h1>
-            <h2>Recherchez des offres de location de voitures à proximité de votre emplacement</h2>
+            <p class="qf_title">Location de véhicule au Canada</p>
+            <p class="qf_description">Recherchez des offres de location de voitures à proximité de votre emplacement</p>
+            <div class="qf_localisation">
+                <div class="input_container">
+                    <i class="fas fa-map-marked-alt icon"></i>
+                    <input class="field input_city" type="text" id="localisation" name="localisation" placeholder="Entrez une ville">
+                </div>
+                <div class="input_container">
+                    <i class="fas fa-arrows-alt-h icon"></i>
+                    <input class="field input_km" type="number" id="search_raduis" name="search_raduis" placeholder="Km"><br>
+                </div>
+            </div>
+            <div class="price_range">
+                <div class="input_container">
+                    <i class="fas fa-money-check-alt icon"></i>
+                    <input class="field" type="number" id="min_price" name="min_price" placeholder="min $">
+                </div>
+                <div class="input_container">
+                    <i class="fas fa-money-check-alt icon"></i>
+                    <input class="field" type="number" id="max_price" name="max_price" placeholder="max $"><br>
+                </div>
+            </div>
+            <div class="input_container">
+                <i class="fas fa-users icon"></i>
+                <input class="field" type="number" id="number_seats" name="number_seats" placeholder="Nombre de passagers"><br>
+            </div>
+            <button type="submit" id="qf_btn_search">Rechercher</button>
         </div>
     </div>
 </div>
