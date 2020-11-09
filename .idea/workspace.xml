@@ -25,7 +25,10 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="20460463-a546-434e-8452-f21a5f821285" name="Default Changelist" comment="Side bar menu" />
+    <list default="true" id="20460463-a546-434e-8452-f21a5f821285" name="Default Changelist" comment="quick filter">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JS/Main.js" beforeDir="false" afterPath="$PROJECT_DIR$/JS/Main.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -37,16 +40,16 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
-        <option value="JavaScript File" />
         <option value="HTML File" />
+        <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="momo_menu" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -62,34 +65,26 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Projet" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.path.for.package.eslint" value="project" />
-    <property name="node.js.path.for.package.tslint" value="project" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager">
-    <configuration name="Php 7.4.9" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+    <configuration name="Unnamed" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" nameIsGenerated="true">
       <CommandLine>
         <PhpTestInterpreterSettings>
-          <option name="interpreterName" value="PHP" />
+          <option name="interpreterName" value="PHP 7.4" />
         </PhpTestInterpreterSettings>
       </CommandLine>
       <TestRunner directory="$PROJECT_DIR$" />
       <method v="2" />
     </configuration>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -103,9 +98,10 @@
       <workItem from="1603729264555" duration="319000" />
       <workItem from="1603730837694" duration="15719000" />
       <workItem from="1603900264629" duration="6254000" />
-      <workItem from="1604335882890" duration="6421000" />
-      <workItem from="1604509062438" duration="803000" />
-      <workItem from="1604511733442" duration="5476000" />
+      <workItem from="1604335882890" duration="16624000" />
+      <workItem from="1604429034732" duration="17499000" />
+      <workItem from="1604539711867" duration="9850000" />
+      <workItem from="1604948767393" duration="1153000" />
     </task>
     <task id="LOCAL-00001" summary="Add top navbar design">
       <created>1603749675732</created>
@@ -128,18 +124,39 @@
       <option name="project" value="LOCAL" />
       <updated>1604344275696</updated>
     </task>
-    <task id="LOCAL-00004" summary="Render manager">
-      <created>1604362243497</created>
+    <task id="LOCAL-00004" summary="Side bar menu">
+      <created>1604344682999</created>
       <option name="number" value="00004" />
       <option name="presentableId" value="LOCAL-00004" />
       <option name="project" value="LOCAL" />
-      <updated>1604362243497</updated>
+      <updated>1604344682999</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Side bar menu">
+      <created>1604347437601</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1604347437601</updated>
+    </task>
+    <task id="LOCAL-00006" summary="quick filter">
+      <created>1604516031923</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1604516031923</updated>
+    </task>
+    <task id="LOCAL-00007" summary="quick filter">
+      <created>1604948812367</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1604948812368</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
+    <option name="version" value="2" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -170,29 +187,23 @@
     <MESSAGE value="Add top navbar design" />
     <MESSAGE value="burger button" />
     <MESSAGE value="Side bar menu" />
-    <MESSAGE value="Render manager" />
-    <option name="LAST_COMMIT_MESSAGE" value="Render manager" />
+    <MESSAGE value="quick filter" />
+    <option name="LAST_COMMIT_MESSAGE" value="quick filter" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2190" y="38" key="#CLI_Interpreters" timestamp="1604350041852">
-      <screen x="1920" y="0" width="1920" height="1040" />
-    </state>
-    <state x="2190" y="38" key="#CLI_Interpreters/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1604350041852" />
     <state x="349" y="0" key="#PHP" timestamp="1603737720503">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="349" y="0" key="#PHP/0.0.1280.689@0.0.1280.689" timestamp="1603737720503" />
-    <state x="2064" y="0" width="1092" height="766" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604350072100">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1603737705464">
+      <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.689@0.0.1280.689" timestamp="1603737705464" />
-    <state x="2064" y="0" width="1092" height="766" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1604350072100" />
-    <state x="2660" y="261" key="FileChooserDialogImpl" timestamp="1604350035491">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state x="493" y="173" key="FileChooserDialogImpl" timestamp="1604354169984">
+      <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="740" y="261" key="FileChooserDialogImpl/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1603729499866" />
-    <state x="493" y="173" key="FileChooserDialogImpl/0.0.1280.689@0.0.1280.689" timestamp="1603900581227" />
-    <state x="2660" y="261" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1604350035491" />
+    <state x="493" y="173" key="FileChooserDialogImpl/0.0.1280.689@0.0.1280.689" timestamp="1604354169984" />
     <state x="784" y="422" key="Github.CreateGistDialog" timestamp="1603729541805">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -201,37 +212,31 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="838" y="418" width="243" height="276" key="Github.ShareDialog/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1603729555222" />
-    <state width="1237" height="166" key="GridCell.Tab.0.bottom" timestamp="1604344217477">
+    <state width="1237" height="166" key="GridCell.Tab.0.bottom" timestamp="1604421045667">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state width="1237" height="166" key="GridCell.Tab.0.bottom/0.0.1280.689@0.0.1280.689" timestamp="1604344217477" />
-    <state width="1237" height="166" key="GridCell.Tab.0.center" timestamp="1604344217476">
+    <state width="1237" height="166" key="GridCell.Tab.0.bottom/0.0.1280.689@0.0.1280.689" timestamp="1604421045667" />
+    <state width="1237" height="166" key="GridCell.Tab.0.center" timestamp="1604421045664">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state width="1237" height="166" key="GridCell.Tab.0.center/0.0.1280.689@0.0.1280.689" timestamp="1604344217476" />
-    <state width="1237" height="166" key="GridCell.Tab.0.left" timestamp="1604344217476">
+    <state width="1237" height="166" key="GridCell.Tab.0.center/0.0.1280.689@0.0.1280.689" timestamp="1604421045664" />
+    <state width="1237" height="166" key="GridCell.Tab.0.left" timestamp="1604421045663">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state width="1237" height="166" key="GridCell.Tab.0.left/0.0.1280.689@0.0.1280.689" timestamp="1604344217476" />
-    <state width="1237" height="166" key="GridCell.Tab.0.right" timestamp="1604344217477">
+    <state width="1237" height="166" key="GridCell.Tab.0.left/0.0.1280.689@0.0.1280.689" timestamp="1604421045663" />
+    <state width="1237" height="166" key="GridCell.Tab.0.right" timestamp="1604421045666">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state width="1237" height="166" key="GridCell.Tab.0.right/0.0.1280.689@0.0.1280.689" timestamp="1604344217477" />
-    <state x="2636" y="406" key="NewPhpFileDialog" timestamp="1604516698060">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state width="1237" height="166" key="GridCell.Tab.0.right/0.0.1280.689@0.0.1280.689" timestamp="1604421045666" />
+    <state x="477" y="269" key="NewPhpFileDialog" timestamp="1603735848366">
+      <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="477" y="269" key="NewPhpFileDialog/0.0.1280.689@0.0.1280.689" timestamp="1603735848366" />
-    <state x="2636" y="406" key="NewPhpFileDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1604516698060" />
-    <state x="2472" y="235" key="Vcs.Push.Dialog.v2" timestamp="1604362193749">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state x="368" y="156" key="Vcs.Push.Dialog.v2" timestamp="1604948836490">
+      <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1603729524558" />
-    <state x="368" y="156" key="Vcs.Push.Dialog.v2/0.0.1280.689@0.0.1280.689" timestamp="1604344308020" />
-    <state x="2472" y="235" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1604362193749" />
-    <state x="2660" y="233" key="git4idea.branch.GitSmartOperationDialog" timestamp="1604538334766">
-      <screen x="1920" y="0" width="1920" height="1040" />
-    </state>
-    <state x="2660" y="233" key="git4idea.branch.GitSmartOperationDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1604538334766" />
+    <state x="368" y="156" key="Vcs.Push.Dialog.v2/0.0.1280.689@0.0.1280.689" timestamp="1604948836490" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1603729568473">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
