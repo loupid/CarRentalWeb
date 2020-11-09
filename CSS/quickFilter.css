@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
 
 .quick_filter{
-    margin: 0 30%;
+    margin: 0 30% 10% 30%;
     width: 81.3%;
     height: 400px;
     padding: 2% 6%;
@@ -70,6 +70,11 @@
     border: none;
 }
 
+.field:focus {
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    outline: none;
+}
+
 #min_price {
     margin-right: 5px;
 }
@@ -77,4 +82,9 @@
 #number_seats {
     width: 88.2%;
     margin-bottom: 5px;
+}
+
+.cards {
+    display: flex;
+    /*flex-direction: column;*/
 }
