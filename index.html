@@ -8,6 +8,7 @@
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="JS/Main.js"></script>
+    <script src="JS/Get.js"></script>
     <script src="JS/RenderingManager.js"></script>
 </head>
 <body>
@@ -21,7 +22,7 @@
     <nav>
         <ul class="nav_links">
             <li><a href="#">À propos de nous</a></li>
-            <li><a href="HTML/Login/login.html">S'inscrire</a></li>
+            <li><a href="#">S'inscrire</a></li>
         </ul>
     </nav>
     <a href="#">
@@ -30,13 +31,6 @@
 </header>
 
 <div class="container">
-    <!--    <div id="mySidenav" class="sidenav">-->
-    <!--        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>-->
-    <!--        <a href="#">About</a>-->
-    <!--        <a href="#">Services</a>-->
-    <!--        <a href="#">Clients</a>-->
-    <!--        <a href="#">Contact</a>-->
-    <!--    </div>-->
 
     <div id="main_body">
         <div class="test">
@@ -83,32 +77,9 @@
         </div>
 
         <div class="cards">
-            <div class="card">
-                <img src="Images/Logo.PNG" alt="Avatar" class="car_image">
-                <div class="vehicle_details">
-                    mkqwmkwm
-                    kkklf
-                    kwlqkfl
-                    kenfkfw
-                    <!--                <h4 class="vehicle_name"><b>Ford Focus</b></h4>-->
-                    <!--                <label class="vehicle_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit</label><br>-->
-                    <!--                <label class="vehicle_passenger_count">5</label><br>-->
-                    <!--                <label class="vehicle_price">200$/day</label><br>-->
-                    <!--                <label class="vehicle_localisation">Montréal</label>-->
-                </div>
-            </div>
-            <div class="card">
-                <img src="Images/Logo.PNG" alt="Avatar" class="car_image">
-                <div class="vehicle_details">
-                    <p></p>
-                    <!--                                    kenfkfw-->
-                    <!--                <h4 class="vehicle_name"><b>Ford Focus</b></h4>-->
-                    <!--                <label class="vehicle_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit</label><br>-->
-                    <!--                <label class="vehicle_passenger_count">5</label><br>-->
-                    <!--                <label class="vehicle_price">200$/day</label><br>-->
-                    <!--                <label class="vehicle_localisation">Montréal</label>-->
-                </div>
-            </div>
+            <script>
+                GetAllCarsList();
+            </script>
         </div>
     </div>
 </div>

@@ -23,7 +23,7 @@ header {
 }
 
 .nav_links li a {
-    transition: all 0.3s ease 0s;
+    transition: all 0.3s;
 }
 
 .nav_links li a:hover {
@@ -37,7 +37,7 @@ header {
     border: none;
     border-radius: 50px;
     cursor: pointer;
-    transition: all 0.3s ease 0s;
+    transition: all 0.3s;
 }
 
 button:hover {
