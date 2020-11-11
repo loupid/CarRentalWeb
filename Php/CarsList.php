@@ -8,6 +8,8 @@ $query = "select u.Username as username, b.Name as brandname, c.Name as carname,
 
 $result = mysqli_query($con,$query);
 
+$last_id = mysqli_insert_id($con);
+
 while($row = mysqli_fetch_array($result)){
     $username = $row['username'];
     $brandname = $row['brandname'];
@@ -27,3 +29,4 @@ while($row = mysqli_fetch_array($result)){
 
 // Encoding array in JSON format
 echo json_encode($return_arr);
+echo $last_id;
