@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+
+.login_title {
+    font-family: 'Russo One', sans-serif;
+    font-size: 35px;
+    color: black;
+}
+
+.login {
+    display: flex;
+    flex-direction: column;
+    margin: 10% 25%;
+    height: 400px;
+    padding: 2% 6%;
+    background-color: #e5e7e9;
+}
+
+.login_credentials {
+    display: flex;
+    flex-direction: column;
+}
+
+.icon {
+    color: black;
+}
+
+.input_container_login {
+    margin-bottom: 1%;
+    width: 100%;
+}
+
+.input_container_login i {
+    position: absolute;
+}
+
+.input_container_login .icon {
+    padding: 10px 20px;
+    font-size: 25px;
+    text-align: left;
+}
+
+.login_credentials {
+    width: 100%;
+}
+
+#btn_confirm_login {
+    width: 100%;
+    padding: 9px 25px;
+    background: linear-gradient(135deg, #ff690f 0%, #e8381b 100%);
+    color: white;
+    font-size: 30px;
+    border: none;
+    cursor: pointer;
+    margin: 3% 0;
+    transition: all 0.3s;
+}
+
+#btn_confirm_login:hover {
+    background-color: #F39C12;
+    color: #000000;
+}
+
+#email {
+    width: calc(100% - 70px);
+}
+
+#password {
+    width: calc(100% - 70px);
+}
+
+#forgot_password {
+    color: black;
+    size: 18px;
+    text-align: center;
+}
+
+#forgot_password:hover {
+    color: #e55e0d;
+}
