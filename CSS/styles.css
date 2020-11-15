@@ -3,7 +3,8 @@
 @import "advancedFilter.css";
 @import "quickFilter.css";
 @import "cardview.css";
-@import "login.css";
+@import "loginregister.css";
+@import "addAnnounce.css";
 
 /*TODO Exploration for responsive*/
 @media only screen and (max-width:620px) {
