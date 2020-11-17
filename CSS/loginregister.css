@@ -82,12 +82,34 @@
 #forgot_password:hover {
     color: #e55e0d;
 }
+.register_privacy {
+    display: flex;
+    vertical-align: middle;
+}
+
+.register_privacy_text {
+    display: flex;
+    flex: 1;
+}
+
+.register_privacy h1 {
+    color: black;
+    font-size: 20px;
+    float: left;
+}
+
+#icon_privacy {
+    color: black;
+    margin: 15px 10px 0 20px;
+    font-size: 25px;
+}
 
 .register_switch {
     position: relative;
     display: inline-block;
     width: 60px;
     height: 34px;
+    margin-top: 5px;
 }
 
 .register_switch input {

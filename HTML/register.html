@@ -45,10 +45,17 @@
             <input class="field" type="password" id="register_password" name="register_password"
                    placeholder="Mot de passe" required><br>
         </div>
-        <label class="register_switch">
-            <input type="checkbox">
-            <span class="register_slider round"></span>
-        </label>
+
+        <div class="register_privacy">
+            <div class="register_privacy_text">
+                <i class="fas fa-user-shield" id="icon_privacy"></i>
+                <h1>Voulez-vous rendre vos informations publiques ?</h1>
+            </div>
+            <label class="register_switch">
+                <input type="checkbox">
+                <span class="register_slider round"></span>
+            </label>
+        </div>
     </div>
     <button type="submit" id="btn_confirm_register">Se connecter</button>
 
