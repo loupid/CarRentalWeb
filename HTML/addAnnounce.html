@@ -12,7 +12,78 @@
     <script src="../JS/RenderingManager.js"></script>
 </head>
 <body>
+<div class="add_announce">
+    <div class="add_announce_container announce_details">
+        <h1>Détails de l'annonce</h1>
+        <hr>
+        <div class="input_container_addAnnounce">
+            <i class="fas fa-font icon" style="color: black"></i>
+            <input class="field" type="text" id="title" name="title"
+                   placeholder="Titre de l'annonce" required>
+        </div>
 
+        <div class="input_container_addAnnounce">
+            <i class="fas fa-font icon" style="color: black"></i>
+            <input class="field" type="text" id="brand" name="brand"
+                   placeholder="Marque" required>
+        </div>
 
+        <div class="input_container_addAnnounce">
+            <i class="fas fa-font icon" style="color: black"></i>
+            <input class="field" type="text" id="model" name="model"
+                   placeholder="Modèle" required>
+        </div>
+
+        <div class="input_container_addAnnounce">
+            <i class="fas fa-font icon" style="color: black"></i>
+            <input class="field" type="text" id="seat_count" name="seat_count"
+                   placeholder="Nombre de passagers" required>
+        </div>
+
+        <div class="input_container_addAnnounce">
+            <i class="fas fa-font icon" style="color: black"></i>
+            <textarea name="description" class="field" id="description" rows="5" placeholder="Description"
+                      required></textarea>
+        </div>
+
+        <div class="add_announce_available">
+            <div class="add_announce_available_text">
+                <i class="fas fa-clipboard-check" id="icon_available"></i>
+                <h2>Disponible ?</h2>
+            </div>
+            <label class="register_switch">
+                <input type="checkbox">
+                <span class="register_slider round"></span>
+            </label>
+        </div>
+    </div>
+
+    <div class="add_announce_container announce_media">
+        <h1>Médias</h1>
+        <hr>
+    </div>
+
+    <div class="add_announce_container announce_localisation">
+        <h1>Emplacement</h1>
+        <hr>
+
+        <div class="input_container">
+            <i class="fas fa-map-marked-alt icon"></i>
+            <input class="field announce_input_city" type="text" id="announce_localisation" name="announce_localisation"
+                   placeholder="Entrez une ville">
+        </div>
+    </div>
+
+    <div class="add_announce_container announce_price">
+        <h1>Prix</h1>
+        <hr>
+        <div class="input_container_addAnnounce">
+            <i class="fas fa-font icon" style="color: black"></i>
+            <input class="field" type="number" id="price" name="price"
+                   placeholder="Prix par jour" min="0.01" step="0.01" required>
+        </div>
+    </div>
+    <button type="submit" id="btn_confirm_add_announce">Publier l'annonce</button>
+</div>
 </body>
 </html>

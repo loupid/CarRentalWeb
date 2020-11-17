@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Russo One&display=swap');
+
+.add_announce {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin: 5% 15%;
+}
+
+.add_announce_container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 2% 0;
+    padding: 2% 5%;
+    background-color: #e5e7e9;
+}
+
+h1 {
+    color: black;
+    font-family: 'Russo One', sans-serif;
+    font-size: 20px;
+}
+
+h2, i {
+    color: black;
+}
+
+hr {
+    width: 100%;
+}
+
+.add_announce_container input, textarea{
+    width: calc(100% - 70px);
+}
+
+.add_announce_available {
+    display: flex;
+    vertical-align: middle;
+}
+
+.add_announce_available_text {
+    display: flex;
+    flex: 1;
+}
+
+
+#btn_confirm_add_announce {
+    width: 110%;
+    padding: 9px 25px;
+    background: linear-gradient(135deg, #ff690f 0%, #e8381b 100%);
+    color: white;
+    font-size: 30px;
+    border: none;
+    cursor: pointer;
+    margin: 3% 0;
+    transition: all 0.3s;
+}
+
+#btn_confirm_add_announce:hover {
+    background-color: #F39C12;
+    color: #000000;
+}
