@@ -29,4 +29,3 @@ while($row = mysqli_fetch_array($result)){
 
 // Encoding array in JSON format
 echo json_encode($return_arr);
-echo $last_id;

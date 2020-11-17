@@ -8,10 +8,39 @@
         <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="../JS/Main.js"></script>
-        <script src="../JS/Get.js"></script>
+        <script src="../JS/Get/ListOfCars.js"></script>
         <script src="../JS/RenderingManager.js"></script>
     </head>
 <body>
+<script>
+    $(document).ready(() => {
+        $('#btn_confirm_login').click(() => {
+            var username = $("#login_email").val().trim();
+            var password = $("#login_password").val().trim();
+            debugger;
+
+            if (username !== "" && password !== "") {
+                $.ajax('../Php/Login.php',{
+                    type: 'post',
+                    data:{username: username, password: password},
+                    success: (response) => {
+                        debugger;
+                        var msg = "";
+                        if(response === "1"){
+                            window.location = "../index.html";
+                        }else{
+                            msg = "Invalid username and password!";
+                        }
+                        $("#message").html(msg);
+                    },
+                    errors: (response) => {
+                        debugger;
+                    }
+                })
+            }
+        });
+    });
+</script>
 <div class="login">
     <p class="login_title">Connexion</p>
     <div class="login_credentials">
@@ -27,7 +56,7 @@
         </div>
     </div>
     <button type="submit" id="btn_confirm_login">Se connecter</button>
-    <a id="forgot_password">Mot de passe oublié ?</a>
+    <a id="forgot_password" href="register.html">Mot de passe oublié ?</a>
 </div>
 </body>
 </html>
