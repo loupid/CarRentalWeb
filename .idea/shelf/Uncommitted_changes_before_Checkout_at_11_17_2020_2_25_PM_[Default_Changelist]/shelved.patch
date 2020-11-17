@@ -1,0 +1,87 @@
+Index: HTML/addAnnounce.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- HTML/addAnnounce.html	(date 1605632732400)
++++ HTML/addAnnounce.html	(date 1605632732400)
+@@ -0,0 +1,32 @@
++<!DOCTYPE html>
++<html lang="en">
++<head>
++    <meta charset="UTF-8">
++    <title>Location de voitures</title>
++    <meta name="viewport" content="width=device-width, initial-scale=1">
++    <link rel="stylesheet" href="../CSS/styles.css" type="text/css">
++    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
++    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
++    <script src="../JS/Main.js"></script>
++    <script src="../JS/Get.js"></script>
++    <script src="../JS/RenderingManager.js"></script>
++</head>
++<body>
++<div class="add_announce_container announce_details">
++<h1>Détails de l'annonce</h1><hr>
++</div>
++
++<div class="add_announce_container announce_media">
++<h1>Médias</h1><hr>
++</div>
++
++<div class="add_announce_container announce_localisation">
++<h1>Emplacement</h1><hr>
++</div>
++
++<div class="add_announce_container announce_price">
++<h1>Prix</h1><hr>
++
++</div>
++</body>
++</html>
+\ No newline at end of file
+Index: CSS/addAnnounce.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- CSS/addAnnounce.css	(date 1605632963432)
++++ CSS/addAnnounce.css	(date 1605632963432)
+@@ -0,0 +1,20 @@
++@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
++
++.add_announce_container {
++    display: flex;
++    flex-direction: column;
++    width: 70%;
++    margin: 5% 15%;
++    padding: 1%;
++    background-color: #e5e7e9;
++}
++
++h1 {
++    color: black;
++    font-family: 'Russo One', sans-serif;
++    font-size: 20px;
++}
++
++hr {
++    width: 100%;
++}
+\ No newline at end of file
+Index: CSS/styles.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');\r\n@import \"topNavBar.css\";\r\n@import \"advancedFilter.css\";\r\n@import \"quickFilter.css\";\r\n@import \"cardview.css\";\r\n@import \"login.css\";\r\n\r\n/*TODO Exploration for responsive*/\r\n@media only screen and (max-width:620px) {\r\n\r\n}\r\n\r\nbody {\r\n    background-color:  #f8f9f9;\r\n    padding: 0;\r\n    margin: 0;\r\n}\r\n\r\n* {\r\n    font-family: 'Montserrat', sans-serif;\r\n    font-weight: 400;\r\n    font-size: 18px;\r\n    color: #EDF0F1;\r\n    text-decoration: none;\r\n}\r\n\r\n.container{\r\n    display: flex;\r\n}\r\n\r\n.container * {\r\n    font-size: 30px;\r\n    color: #000000;\r\n}\r\n\r\n.advanced_filters{\r\n    width: 15%;\r\n    background-color: yellow;\r\n    height: 100%;\r\n}\r\n\r\n#main_body{\r\n    display: flex;\r\n    flex-direction: column;\r\n}\r\n\r\n.test {\r\n    display: flex;\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- CSS/styles.css	(revision c193b9e8f6dee5f0831ebeb5e783ab45b0364de3)
++++ CSS/styles.css	(date 1605557761760)
+@@ -4,6 +4,7 @@
+ @import "quickFilter.css";
+ @import "cardview.css";
+ @import "login.css";
++@import "addAnnounce.css";
+ 
+ /*TODO Exploration for responsive*/
+ @media only screen and (max-width:620px) {

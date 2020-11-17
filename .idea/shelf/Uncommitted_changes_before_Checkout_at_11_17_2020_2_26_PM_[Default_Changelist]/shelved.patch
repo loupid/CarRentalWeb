@@ -1,0 +1,19 @@
+Index: CSS/styles.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');\r\n@import \"topNavBar.css\";\r\n@import \"advancedFilter.css\";\r\n@import \"quickFilter.css\";\r\n@import \"cardview.css\";\r\n@import \"loginregister.css\";\r\n@import \"addAnnounce.css\";\r\n\r\n/*TODO Exploration for responsive*/\r\n@media only screen and (max-width:620px) {\r\n\r\n}\r\n\r\nbody {\r\n    background-color:  #f8f9f9;\r\n    padding: 0;\r\n    margin: 0;\r\n}\r\n\r\n* {\r\n    font-family: 'Montserrat', sans-serif;\r\n    font-weight: 400;\r\n    font-size: 18px;\r\n    color: #EDF0F1;\r\n    text-decoration: none;\r\n}\r\n\r\n.container{\r\n    display: flex;\r\n}\r\n\r\n.container * {\r\n    font-size: 30px;\r\n    color: #000000;\r\n}\r\n\r\n.advanced_filters{\r\n    width: 15%;\r\n    background-color: yellow;\r\n    height: 100%;\r\n}\r\n\r\n#main_body{\r\n    display: flex;\r\n    flex-direction: column;\r\n}\r\n\r\n.test {\r\n    display: flex;\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- CSS/styles.css	(revision e67849169c6667eb0ced3be0025554151d53fff9)
++++ CSS/styles.css	(date 1605641131357)
+@@ -3,8 +3,7 @@
+ @import "advancedFilter.css";
+ @import "quickFilter.css";
+ @import "cardview.css";
+-@import "loginregister.css";
+-@import "addAnnounce.css";
++@import "login.css";
+ 
+ /*TODO Exploration for responsive*/
+ @media only screen and (max-width:620px) {
