@@ -26,6 +26,12 @@ h2, i {
     color: black;
 }
 
+h3 {
+    color: black;
+    font-family: "Arial Black", serif;
+    font-size: 18px;
+}
+
 hr {
     width: 100%;
 }
@@ -60,4 +66,32 @@ hr {
 #btn_confirm_add_announce:hover {
     background-color: #F39C12;
     color: #000000;
+}
+
+input [type="file"] {
+    display: none;
+    visibility: hidden;
+}
+
+#hide *{
+    color: black;
+}
+
+#hide input[type=file] {
+    display:none;
+    margin:10px;
+}
+#hide input[type=file] + label {
+    display:inline-block;
+    margin:20px;
+    padding: 4px 32px;
+    background-color: #FFFFFF;
+    border:solid 1px #666F77;
+    border-radius: 6px;
+    color:#666F77;
+}
+#hide input[type=file]:active + label {
+    background-image: none;
+    background-color:#2D6C7A;
+    color:#FFFFFF;
 }

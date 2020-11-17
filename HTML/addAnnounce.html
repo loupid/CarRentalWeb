@@ -61,12 +61,19 @@
     <div class="add_announce_container announce_media">
         <h1>Médias</h1>
         <hr>
+        <h3>Ajoutez une photo pour attirer l'attention sur votre annonce</h3>
+        <div id="hide" class="col-lg-8 col-xs-8">
+            <label class="hand-cursor">
+                <input type="file" id="image" accept="image/*">
+                <span class="fas fa-file-image icon"></span>
+                <span class="photo_text hidden-xs">Choisir image</span>
+            </label>
+        </div>
     </div>
 
     <div class="add_announce_container announce_localisation">
         <h1>Emplacement</h1>
         <hr>
-
         <div class="input_container">
             <i class="fas fa-map-marked-alt icon"></i>
             <input class="field announce_input_city" type="text" id="announce_localisation" name="announce_localisation"
