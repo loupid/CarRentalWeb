@@ -12,6 +12,13 @@
     <script src="../JS/RenderingManager.js"></script>
 </head>
 <body>
+<script>
+    function setImageText() {
+        var imageFile = document.getElementById('image');
+        $("#span_image_choice").text(imageFile.files.item(0).name);
+    }
+
+</script>
 <div class="add_announce">
     <div class="add_announce_container announce_details">
         <h1>Détails de l'annonce</h1>
@@ -35,8 +42,14 @@
         </div>
 
         <div class="input_container_addAnnounce input_container">
+            <i class="fas fa-th icon" style="color: black"></i>
+            <input class="field" type="text" id="category" name="category"
+                   placeholder="Catégorie" required>
+        </div>
+
+        <div class="input_container_addAnnounce input_container">
             <i class="fas fa-users icon" style="color: black"></i>
-            <input class="field" type="text" id="seat_count" name="seat_count"
+            <input class="field" type="text" id="seat_count" name="seat_count" step="1" min="1"
                    placeholder="Nombre de passagers" required>
         </div>
 
@@ -64,9 +77,11 @@
         <h3>Ajoutez une photo pour attirer l'attention sur votre annonce</h3>
         <div id="hide">
             <label class="hand-cursor">
-                <input type="file" id="image" accept="image/*">
-                <i class="fas fa-camera-retro icon" style="font-size: 25px"></i>
-                <span class="photo_text hidden-xs">Choisir image</span>
+                <input type="file" id="image" accept="image/*" onchange="setImageText()">
+                <span id="addimage">
+                    <i class="fas fa-camera-retro icon" id="icon_camera" style="font-size: 25px"></i>
+                    <span class="photo_text hidden-xs" id="span_image_choice">Choisir image</span>
+                </span>
             </label>
         </div>
     </div>
