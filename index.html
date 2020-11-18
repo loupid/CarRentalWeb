@@ -12,11 +12,19 @@
     <script src="JS/RenderingManager.js"></script>
 </head>
 <body>
+<script>
+    $(document).ready(()=>{
+        debugger;
+        var url = new URL(window.location.href);
+        var c = url.searchParams.get("username");
+
+    })
+</script>
 <header>
     <button type="submit" id="btn_burger" onclick="openNav()"><i id="icon_btn_burger" class="fas fa-bars"></i></button>
     <img class="logo" src="Images/Logo.PNG" alt="logo">
     <div class="search">
-        <input type="text" class="search_box" placeholder="Rechercher...">
+        <input type="text" class="search_box" placeholder="Rechercher..."/>
         <button type="submit" id="btn_search"><i class="fa fa-search"></i></button>
     </div>
     <nav>

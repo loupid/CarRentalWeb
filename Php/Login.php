@@ -7,18 +7,16 @@ $password = mysqli_real_escape_string($con,$_POST['password']);
 
 if ($uname != "" && $password != ""){
 
-    $sql_query = "select count(*) as cntUser from users where Username='loupid' and Password='secret1234'";
+    $sql_query = "select count(*) as cntUser from users where Username='".$uname."' and Password='".$password."'";
     $result = mysqli_query($con,$sql_query);
     $row = mysqli_fetch_array($result);
 
     $count = $row['cntUser'];
 
     if($count > 0){
-        $_SESSION['uname'] = $uname;
         echo 1;
     }else{
         echo 0;
     }
-
 }
 ?>

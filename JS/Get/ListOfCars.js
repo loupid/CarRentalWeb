@@ -12,6 +12,7 @@
                     var seatcount = response[i].seatcount;
                     var typename = response[i].typename;
                     var description = response[i].description;
+                    var price = response[i].price;
 
                     var tr_str = "<div class='card'>" +
                         "<img src='Images/Logo.PNG' alt='Avatar' class='car_image'>" +
@@ -19,7 +20,7 @@
                         "<h4 class='vehicle_name'><b>" + brandname + " " + carname + "</b></h4>" +
                         "<label class='vehicle_description'>" + description + "</label><br>" +
                         "<label class='vehicle_passenger_count'>" + seatcount + "</label><br>" +
-                        "<label class='vehicle_price'>" + "200$/day" + "</label><br>" +
+                        "<label class='vehicle_price'>" + price + "</label><br>" +
                         "<label class='vehicle_localisation'>" + "Montréal" + "</label>" +
                         "</div>" +
                         "</div>";

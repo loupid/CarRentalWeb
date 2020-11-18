@@ -3,8 +3,8 @@
 include "Database/config.php";
 
 $return_arr = array();
-
-$query = "select u.Username as username, b.Name as brandname, c.Name as carname, c.SeatCount as seatcount, t.NameType as typename, t.Description as description from annouces a inner join users u on a.IdUserOwner = u.IdUser inner join (cars c inner join brands b on c.IdBrand = b.IdBrand inner join types t on c.IdType = t.IdType) on a.IdCar = c.IdCar;";
+//TODO changer la query
+$query = "select u.Username as username, BrandName as brandname, CarName as carname, SeatCount as seatcount, NameType as typename, Description as description, Price as price from annouces inner join users u on annouces.IdUserOwner = u.IdUser;";
 
 $result = mysqli_query($con,$query);
 
@@ -17,13 +17,15 @@ while($row = mysqli_fetch_array($result)){
     $seatcount = $row['seatcount'];
     $typename = $row['typename'];
     $description = $row['description'];
+    $price = $row['price'];
 
     $return_arr[] = array("username" => $username,
         "brandname" => $brandname,
         "carname" => $carname,
         "seatcount" => $seatcount,
         "typename" => $typename,
-        "description" => $description
+        "description" => $description,
+        "price" => $price
         );
 }
 

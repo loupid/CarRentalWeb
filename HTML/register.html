@@ -12,9 +12,31 @@
     <script src="../JS/RenderingManager.js"></script>
 </head>
 <body>
+<script>
+    $(document).ready(() => {
+        $('#btn_confirm_login').click(() => {
+            let stringJson = "{";
+            $('div#form :input').serializeArray().forEach((e) => {
+                stringJson += '"' + e.name + '":"' + e.value + '",';
+            });
+            stringJson = stringJson.substring(0, stringJson.length - 1) + "}";
+            $.ajax('../Php/Register.php', {
+                type: 'post',
+                data: JSON.parse(stringJson),
+                success: (response) => {
+                    if (response === "1") {
+                        window.location = "login.html";
+                    } else {
+                        alert("Le nom de l'utilisateur ou le mot de passe est incorrecte")
+                    }
+                }
+            });
+        });
+    });
+</script>
 <div class="register">
     <p class="login_title">Inscription</p>
-    <div class="login_credentials">
+    <div id="form" class="login_credentials">
         <div class="input_container_login">
             <i class="fas fa-font icon" style="color: black"></i>
             <input class="field" type="text" id="firstname" name="firstname"
@@ -52,7 +74,7 @@
                 <h1>Voulez-vous rendre vos informations publiques ?</h1>
             </div>
             <label class="register_switch">
-                <input type="checkbox">
+                <input type="checkbox" name="showdata">
                 <span class="register_slider round"></span>
             </label>
         </div>
