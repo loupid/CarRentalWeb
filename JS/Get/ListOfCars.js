@@ -25,7 +25,6 @@
                         "</div>";
                     $(".cards").append(tr_str);
                 }
-
             }
         });
     }
