@@ -20,18 +20,30 @@
                 stringJson += '"' + e.name + '":"' + e.value + '",';
             });
             stringJson = stringJson.substring(0, stringJson.length - 1) + "}";
-            $.ajax('../Php/Register.php', {
-                type: 'post',
-                data: JSON.parse(stringJson),
-                success: (response) => {
-                    if (response === "1") {
-                        window.location = "login.html";
-                    } else {
-                        alert("Le nom de l'utilisateur ou le mot de passe est incorrecte")
+            let data = JSON.parse(stringJson)
+
+            debugger;
+            if (!data.showdata){
+                data.showdata = 'off';
+            }
+
+            if (isValid(data)) {
+                $.ajax('../Php/Register.php', {
+                    type: 'post',
+                    data: data,
+                    success: (dataResult) => {
+                        dataResult = JSON.parse(dataResult);
+                        if (dataResult.statusCode === 200) {
+                            window.location = 'login.html';
+                            alert("Inscription réussi")
+                        } else if (dataResult.statusCode === 201) {
+                            alert("Erreur lors de l'enregistrement");
+                        }
                     }
-                }
-            });
-        });
+                });
+            }else alert("Erreur dans l'entrer des données")
+            }
+        );
     });
 </script>
 <div class="register">
@@ -79,7 +91,7 @@
             </label>
         </div>
     </div>
-    <button type="submit" id="btn_confirm_login">Se connecter</button>
+    <button type="submit" id="btn_confirm_login">S'inscrire</button>
 
 </div>
 </body>
