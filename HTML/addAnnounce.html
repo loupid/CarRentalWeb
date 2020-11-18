@@ -16,39 +16,39 @@
     <div class="add_announce_container announce_details">
         <h1>Détails de l'annonce</h1>
         <hr>
-        <div class="input_container_addAnnounce">
+        <div class="input_container_addAnnounce input_container">
             <i class="fas fa-font icon" style="color: black"></i>
             <input class="field" type="text" id="title" name="title"
                    placeholder="Titre de l'annonce" required>
         </div>
 
-        <div class="input_container_addAnnounce">
-            <i class="fas fa-font icon" style="color: black"></i>
+        <div class="input_container_addAnnounce input_container">
+            <i class="fas fa-car icon" style="color: black"></i>
             <input class="field" type="text" id="brand" name="brand"
                    placeholder="Marque" required>
         </div>
 
-        <div class="input_container_addAnnounce">
-            <i class="fas fa-font icon" style="color: black"></i>
+        <div class="input_container_addAnnounce input_container">
+            <i class="fas fa-car-side icon" style="color: black"></i>
             <input class="field" type="text" id="model" name="model"
                    placeholder="Modèle" required>
         </div>
 
-        <div class="input_container_addAnnounce">
-            <i class="fas fa-font icon" style="color: black"></i>
+        <div class="input_container_addAnnounce input_container">
+            <i class="fas fa-users icon" style="color: black"></i>
             <input class="field" type="text" id="seat_count" name="seat_count"
                    placeholder="Nombre de passagers" required>
         </div>
 
-        <div class="input_container_addAnnounce">
-            <i class="fas fa-font icon" style="color: black"></i>
+        <div class="input_container_addAnnounce input_container">
+            <i class="fas fa-comment-alt icon" style="color: black"></i>
             <textarea name="description" class="field" id="description" rows="5" placeholder="Description"
                       required></textarea>
         </div>
 
         <div class="add_announce_available">
-            <div class="add_announce_available_text">
-                <i class="fas fa-clipboard-check" id="icon_available"></i>
+            <div class="add_announce_available_text input_container">
+                <i class="fas fa-clipboard-check" id="icon_available" style="font-size: 25px"></i>
                 <h2>Disponible ?</h2>
             </div>
             <label class="register_switch">
@@ -62,10 +62,10 @@
         <h1>Médias</h1>
         <hr>
         <h3>Ajoutez une photo pour attirer l'attention sur votre annonce</h3>
-        <div id="hide" class="col-lg-8 col-xs-8">
+        <div id="hide">
             <label class="hand-cursor">
                 <input type="file" id="image" accept="image/*">
-                <span class="fas fa-file-image icon"></span>
+                <i class="fas fa-camera-retro icon" style="font-size: 25px"></i>
                 <span class="photo_text hidden-xs">Choisir image</span>
             </label>
         </div>
@@ -84,8 +84,8 @@
     <div class="add_announce_container announce_price">
         <h1>Prix</h1>
         <hr>
-        <div class="input_container_addAnnounce">
-            <i class="fas fa-font icon" style="color: black"></i>
+        <div class="input_container_addAnnounce input_container">
+            <i class="fas fa-dollar-sign icon" style="color: black"></i>
             <input class="field" type="number" id="price" name="price"
                    placeholder="Prix par jour" min="0.01" step="0.01" required>
         </div>
