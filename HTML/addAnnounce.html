@@ -12,7 +12,54 @@
     <script src="../JS/RenderingManager.js"></script>
 </head>
 <body>
-<div class="add_announce">
+<script>
+    $(document).ready(() => {
+        $('#btn_confirm_add_announce').click(() => {
+                let stringJsonInput = "{";
+                $('div#form :input').serializeArray().forEach((e) => {
+                    stringJsonInput += '"' + e.name + '":"' + e.value + '",';
+                });
+                stringJsonInput = stringJsonInput.substring(0, stringJsonInput.length - 1) + "}";
+                let data = JSON.parse(stringJsonInput);
+
+                debugger;
+                if (!data.available){
+                    data.available = 'off';
+                }
+                var p;
+                var canvas = document.createElement("canvas");
+                var img1=document.createElement("img");
+                function getBase64Image(){
+                    p=document.getElementById("fileUpload").value;
+                    img1.setAttribute('src', p);
+                    canvas.width = img1.width;
+                    canvas.height = img1.height;
+                    var ctx = canvas.getContext("2d");
+                    ctx.drawImage(img1, 0, 0);
+                    var dataURL = canvas.toDataURL("image/png");
+                    alert("from getbase64 function"+dataURL );
+                    return dataURL;
+                }
+                if (isValid(data)) {
+                    $.ajax('../Php/Register.php', {
+                        type: 'post',
+                        data: data,
+                        success: (dataResult) => {
+                            dataResult = JSON.parse(dataResult);
+                            if (dataResult.statusCode === 200) {
+                                window.location = 'login.html';
+                                alert("Inscription réussi")
+                            } else if (dataResult.statusCode === 201) {
+                                alert("Erreur lors de l'enregistrement");
+                            }
+                        }
+                    });
+                }else alert("Erreur dans l'entrer des données")
+        }
+        );
+    });
+</script>
+<div id="form" class="add_announce">
     <div class="add_announce_container announce_details">
         <h1>Détails de l'annonce</h1>
         <hr>
@@ -52,7 +99,7 @@
                 <h2>Disponible ?</h2>
             </div>
             <label class="register_switch">
-                <input type="checkbox">
+                <input type="checkbox" name="available">
                 <span class="register_slider round"></span>
             </label>
         </div>
