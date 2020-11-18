@@ -15,3 +15,32 @@ function closeNav() {
     });
     $(".quick_filter").css({"left": "0%"});
 }
+
+function isValid(data){
+    const regex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+    if (!regex.test(data['register_email'])){
+        return false;
+    }
+
+    for (let key in data) {
+        if (data.hasOwnProperty(key)) {
+            if (data[key]) {
+                if (key === "firstname" || key === "lastname" || key === "username" || key === "register_email") {
+                    if (data[key].length > 50)
+                        return false;
+                }
+                if (key === "phonenumber") {
+                    if (data[key].length > 10)
+                        return false
+                }
+                if (key === "register_password"){
+                    if (data[key].length > 255)
+                        return false;
+                }
+            }
+            else return false;
+        }
+    }
+    return true;
+}

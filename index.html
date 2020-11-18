@@ -12,20 +12,42 @@
     <script src="JS/RenderingManager.js"></script>
 </head>
 <body>
+<script>
+    $(document).ready(()=>{
+        debugger;
+        let url = new URL(window.location.href);
+        let username = url.searchParams.get("username");
+        let $register = $('#register');
+        if (username){
+            $('#btn_login').text(username);
+            $('#connexion').attr('href','HTML/addAnnounce.html');
+            $register.text('Se déconnecter').attr('href','HTML/register.html');
+        }
+        else{
+            $('#connexion').attr('href', 'HTML/login.html')
+        }
+        if ($register.text() === "S'inscrire"){
+            $register.attr("href", 'HTML/register.html');
+        }
+        if ($register.text() === "Se déconnecter"){
+            $register.attr("href", 'HTML/login.html');
+        }
+    })
+</script>
 <header>
     <button type="submit" id="btn_burger" onclick="openNav()"><i id="icon_btn_burger" class="fas fa-bars"></i></button>
     <img class="logo" src="Images/Logo.PNG" alt="logo">
     <div class="search">
-        <input type="text" class="search_box" placeholder="Rechercher...">
+        <input type="text" class="search_box" placeholder="Rechercher..."/>
         <button type="submit" id="btn_search"><i class="fa fa-search"></i></button>
     </div>
     <nav>
         <ul class="nav_links">
             <li><a href="#">À propos de nous</a></li>
-            <li><a href="HTML/register.html">S'inscrire</a></li>
+            <li><a id="register">S'inscrire</a></li>
         </ul>
     </nav>
-    <a href="HTML/login.html">
+    <a id="connexion">
         <button id="btn_login">Se connecter</button>
     </a>
 </header>
