@@ -3,7 +3,6 @@
 include "Database/config.php";
 
 $return_arr = array();
-//TODO changer la query
 $query = "select u.Username as username, BrandName as brandname, CarName as carname, SeatCount as seatcount, NameType as typename, Description as description, Price as price from annouces inner join users u on annouces.IdUserOwner = u.IdUser;";
 
 $result = mysqli_query($con,$query);
