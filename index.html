@@ -15,9 +15,13 @@
 <script>
     $(document).ready(()=>{
         debugger;
-        var url = new URL(window.location.href);
-        var c = url.searchParams.get("username");
+        let url = new URL(window.location.href);
+        let username = url.searchParams.get("username");
+        if ($('#btn_login').text() !== 'Se connecter'){
+            $('#btn_login').text(username);
+            $('#register').text('Se déconnecter');
 
+        }
     })
 </script>
 <header>
@@ -30,7 +34,7 @@
     <nav>
         <ul class="nav_links">
             <li><a href="#">À propos de nous</a></li>
-            <li><a href="HTML/register.html">S'inscrire</a></li>
+            <li><a id="register" href="HTML/register.html">S'inscrire</a></li>
         </ul>
     </nav>
     <a href="HTML/login.html">
