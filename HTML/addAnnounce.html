@@ -17,6 +17,7 @@
         $('#btn_confirm_add_announce').click(() => {
                 let stringJsonInput = "{";
                 $('div#form :input').serializeArray().forEach((e) => {
+                    debugger;
                     stringJsonInput += '"' + e.name + '":"' + e.value + '",';
                 });
                 stringJsonInput = stringJsonInput.substring(0, stringJsonInput.length - 1) + "}";
@@ -24,31 +25,19 @@
 
                 debugger;
                 if (!data.available){
-                    data.available = 'off';
+                    data.available = 0;
                 }
-                var p;
-                var canvas = document.createElement("canvas");
-                var img1=document.createElement("img");
-                function getBase64Image(){
-                    p=document.getElementById("fileUpload").value;
-                    img1.setAttribute('src', p);
-                    canvas.width = img1.width;
-                    canvas.height = img1.height;
-                    var ctx = canvas.getContext("2d");
-                    ctx.drawImage(img1, 0, 0);
-                    var dataURL = canvas.toDataURL("image/png");
-                    alert("from getbase64 function"+dataURL );
-                    return dataURL;
-                }
+                else data.available = 1;
+
                 if (isValid(data)) {
-                    $.ajax('../Php/Register.php', {
+                    $.ajax('../Php/AddAnnounce.php', {
                         type: 'post',
                         data: data,
                         success: (dataResult) => {
                             dataResult = JSON.parse(dataResult);
                             if (dataResult.statusCode === 200) {
                                 window.location = 'login.html';
-                                alert("Inscription réussi")
+                                alert("Inscription réussi");
                             } else if (dataResult.statusCode === 201) {
                                 alert("Erreur lors de l'enregistrement");
                             }
@@ -82,6 +71,12 @@
         </div>
 
         <div class="input_container_addAnnounce input_container">
+            <i class="fas fa-caravan icon" style="color: black"></i>
+            <input class="field" type="text" id="type" name="typename"
+                   placeholder="Type de véhicule" required>
+        </div>
+
+        <div class="input_container_addAnnounce input_container">
             <i class="fas fa-users icon" style="color: black"></i>
             <input class="field" type="text" id="seat_count" name="seat_count"
                    placeholder="Nombre de passagers" required>
@@ -89,8 +84,7 @@
 
         <div class="input_container_addAnnounce input_container">
             <i class="fas fa-comment-alt icon" style="color: black"></i>
-            <textarea name="description" class="field" id="description" rows="5" placeholder="Description"
-                      required></textarea>
+            <textarea name="description" class="field" id="description" rows="5" style="color: black" placeholder="Description" required></textarea>
         </div>
 
         <div class="add_announce_available">
