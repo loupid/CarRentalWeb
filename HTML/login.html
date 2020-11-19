@@ -1,57 +1,55 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-        <meta charset="UTF-8">
-        <title>Location de voitures</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="../CSS/styles.css" type="text/css">
-        <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="../JS/Main.js"></script>
-        <script src="../JS/Get/ListOfCars.js"></script>
-        <script src="../JS/RenderingManager.js"></script>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <title>Location de voitures</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../CSS/styles.css" type="text/css">
+    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="../JS/Main.js"></script>
+    <script src="../JS/Get/ListOfCars.js"></script>
+    <script src="../JS/RenderingManager.js"></script>
+</head>
 <body>
 <script>
+    //sert lorsque on ce log avec un utilisateur de changer le nom de certain bouton et/ou changer certain fonctionnalite
     $(document).ready(() => {
         $('#btn_confirm_login').click(() => {
-            var username = $("#login_email").val().trim();
-            var password = $("#login_password").val().trim();
-            debugger;
 
-            if (username !== "" && password !== "") {
-                $.ajax('../Php/Login.php',{
-                    type: 'post',
-                    data:{username: username, password: password},
-                    success: (response) => {
-                        debugger;
-                        var msg = "";
-                        if(response === "1"){
-                            window.location = "../index.html";
-                        }else{
-                            msg = "Invalid username and password!";
-                        }
-                        $("#message").html(msg);
-                    },
-                    errors: (response) => {
-                        debugger;
+            let stringJson = "{";
+            $('div#form :input').serializeArray().forEach((e) => {
+                stringJson += '"' + e.name + '":"' + e.value + '",';
+            });
+            stringJson = stringJson.substring(0, stringJson.length - 1) + "}";
+            "{usernae:loupid,passsword:secret}"
+
+            $.ajax('../Php/Login.php', {
+                type: 'post',
+                data: JSON.parse(stringJson),
+                success: (response) => {
+                    debugger;
+                    if (response === "1") {
+                        window.location = '../index.html?username=' + JSON.parse(stringJson).username;
+                    } else {
+                        alert("Le nom de l'utilisateur ou le mot de passe est incorrecte")
                     }
-                })
-            }
+                }
+            });
         });
     });
 </script>
 <div class="login">
     <p class="login_title">Connexion</p>
-    <div class="login_credentials">
+    <div id="form" class="login_credentials">
         <div class="input_container_login">
             <i class="fas fa-at icon" style="color: black"></i>
-            <input class="field" type="text" id="login_email" name="login_email"
+            <input class="field" type="text" id="login_email" name="username"
                    placeholder="Email ou nom d'utilisateur" required>
         </div>
         <div class="input_container_login">
             <i class="fas fa-lock icon" style="color: black"></i>
-            <input class="field" type="password" id="login_password" name="login_password"
+            <input class="field" type="password" id="login_password" name="password"
                    placeholder="Mot de passe" required><br>
         </div>
     </div>

@@ -1,3 +1,16 @@
+
+                    var tr_str = "<div class='card'>" +
+                        "<img src='Images/Logo.PNG' alt='Avatar' class='car_image'>" +
+                        "<div class='vehicle_details'>" +
+                        "<h4 class='vehicle_name'><b>" + brandname + " " + carname + "</b></h4>" +
+                        "<label class='vehicle_description'>" + description + "</label><br>" +
+                        "<label class='vehicle_passenger_count'>" + seatcount + "</label><br>" +
+                        "<label class='vehicle_price'>" + price + "</label><br>" +
+                        "<label class='vehicle_localisation'>" + "Montréal" + "</label>" +
+                        "</div>" +
+                        "</div>";
+                    $(".cards").append(tr_str);
+                }
 function GetAllCarsList() {
     $.ajax({
         url: 'Php/CarsList.php',

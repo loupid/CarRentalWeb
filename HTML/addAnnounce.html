@@ -18,8 +18,42 @@
         $("#span_image_choice").text(imageFile.files.item(0).name);
     }
 
+    $(document).ready(() => {
+        $('#btn_confirm_add_announce').click(() => {
+                let stringJsonInput = "{";
+                $('div#form :input').serializeArray().forEach((e) => {
+                    debugger;
+                    stringJsonInput += '"' + e.name + '":"' + e.value + '",';
+                });
+                stringJsonInput = stringJsonInput.substring(0, stringJsonInput.length - 1) + "}";
+                let data = JSON.parse(stringJsonInput);
+
+                debugger;
+                if (!data.available){
+                    data.available = 0;
+                }
+                else data.available = 1;
+
+                if (isValid(data)) {
+                    $.ajax('../Php/AddAnnounce.php', {
+                        type: 'post',
+                        data: data,
+                        success: (dataResult) => {
+                            dataResult = JSON.parse(dataResult);
+                            if (dataResult.statusCode === 200) {
+                                window.location = 'login.html';
+                                alert("Inscription réussi");
+                            } else if (dataResult.statusCode === 201) {
+                                alert("Erreur lors de l'enregistrement");
+                            }
+                        }
+                    });
+                }else alert("Erreur dans l'entrer des données")
+        }
+        );
+    });
 </script>
-<div class="add_announce">
+<div id="form" class="add_announce">
     <div class="add_announce_container announce_details">
         <h1>Détails de l'annonce</h1>
         <hr>
@@ -55,8 +89,7 @@
 
         <div class="input_container_addAnnounce input_container">
             <i class="fas fa-comment-alt icon" style="color: black"></i>
-            <textarea name="description" class="field" id="description" rows="5" placeholder="Description"
-                      required></textarea>
+            <textarea name="description" class="field" id="description" rows="5" style="color: black" placeholder="Description" required></textarea>
         </div>
 
         <div class="add_announce_available">
@@ -65,7 +98,7 @@
                 <h2>Disponible ?</h2>
             </div>
             <label class="register_switch">
-                <input type="checkbox">
+                <input type="checkbox" name="available">
                 <span class="register_slider round"></span>
             </label>
         </div>
