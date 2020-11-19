@@ -12,7 +12,48 @@
     <script src="../JS/RenderingManager.js"></script>
 </head>
 <body>
-<div class="add_announce">
+<script>
+    function setImageText() {
+        var imageFile = document.getElementById('image');
+        $("#span_image_choice").text(imageFile.files.item(0).name);
+    }
+
+    $(document).ready(() => {
+        $('#btn_confirm_add_announce').click(() => {
+                let stringJsonInput = "{";
+                $('div#form :input').serializeArray().forEach((e) => {
+                    debugger;
+                    stringJsonInput += '"' + e.name + '":"' + e.value + '",';
+                });
+                stringJsonInput = stringJsonInput.substring(0, stringJsonInput.length - 1) + "}";
+                let data = JSON.parse(stringJsonInput);
+
+                debugger;
+                if (!data.available){
+                    data.available = 0;
+                }
+                else data.available = 1;
+
+                if (isValid(data)) {
+                    $.ajax('../Php/AddAnnounce.php', {
+                        type: 'post',
+                        data: data,
+                        success: (dataResult) => {
+                            dataResult = JSON.parse(dataResult);
+                            if (dataResult.statusCode === 200) {
+                                window.location = 'login.html';
+                                alert("Inscription réussi");
+                            } else if (dataResult.statusCode === 201) {
+                                alert("Erreur lors de l'enregistrement");
+                            }
+                        }
+                    });
+                }else alert("Erreur dans l'entrer des données")
+        }
+        );
+    });
+</script>
+<div id="form" class="add_announce">
     <div class="add_announce_container announce_details">
         <h1>Détails de l'annonce</h1>
         <hr>
@@ -35,15 +76,20 @@
         </div>
 
         <div class="input_container_addAnnounce input_container">
+            <i class="fas fa-th icon" style="color: black"></i>
+            <input class="field" type="text" id="category" name="category"
+                   placeholder="Catégorie" required>
+        </div>
+
+        <div class="input_container_addAnnounce input_container">
             <i class="fas fa-users icon" style="color: black"></i>
-            <input class="field" type="text" id="seat_count" name="seat_count"
+            <input class="field" type="text" id="seat_count" name="seat_count" step="1" min="1"
                    placeholder="Nombre de passagers" required>
         </div>
 
         <div class="input_container_addAnnounce input_container">
             <i class="fas fa-comment-alt icon" style="color: black"></i>
-            <textarea name="description" class="field" id="description" rows="5" placeholder="Description"
-                      required></textarea>
+            <textarea name="description" class="field" id="description" rows="5" style="color: black" placeholder="Description" required></textarea>
         </div>
 
         <div class="add_announce_available">
@@ -52,7 +98,7 @@
                 <h2>Disponible ?</h2>
             </div>
             <label class="register_switch">
-                <input type="checkbox">
+                <input type="checkbox" name="available">
                 <span class="register_slider round"></span>
             </label>
         </div>
@@ -64,9 +110,11 @@
         <h3>Ajoutez une photo pour attirer l'attention sur votre annonce</h3>
         <div id="hide">
             <label class="hand-cursor">
-                <input type="file" id="image" accept="image/*">
-                <i class="fas fa-camera-retro icon" style="font-size: 25px"></i>
-                <span class="photo_text hidden-xs">Choisir image</span>
+                <input type="file" id="image" accept="image/*" onchange="setImageText()">
+                <span id="addimage">
+                    <i class="fas fa-camera-retro icon" id="icon_camera" style="font-size: 25px"></i>
+                    <span class="photo_text hidden-xs" id="span_image_choice">Choisir image</span>
+                </span>
             </label>
         </div>
     </div>

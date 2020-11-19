@@ -52,6 +52,7 @@ hr {
 
 textarea {
     resize: none;
+    color: black;
 }
 
 .add_announce_container .input_container{
@@ -106,6 +107,10 @@ input [type="file"] {
     background-image: none;
     background-color:#2D6C7A;
     color:#FFFFFF;
+}
+
+#addimage:hover *{
+    color: #e55e0d;
 }
 
 #icon_available {
