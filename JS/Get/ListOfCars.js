@@ -1,16 +1,3 @@
-
-                    var tr_str = "<div class='card'>" +
-                        "<img src='Images/Logo.PNG' alt='Avatar' class='car_image'>" +
-                        "<div class='vehicle_details'>" +
-                        "<h4 class='vehicle_name'><b>" + brandname + " " + carname + "</b></h4>" +
-                        "<label class='vehicle_description'>" + description + "</label><br>" +
-                        "<label class='vehicle_passenger_count'>" + seatcount + "</label><br>" +
-                        "<label class='vehicle_price'>" + price + "</label><br>" +
-                        "<label class='vehicle_localisation'>" + "Montréal" + "</label>" +
-                        "</div>" +
-                        "</div>";
-                    $(".cards").append(tr_str);
-                }
 function GetAllCarsList() {
     $.ajax({
         url: 'Php/CarsList.php',
@@ -19,18 +6,19 @@ function GetAllCarsList() {
         success: function (response) {
             var len = response.length;
             for (var i = 0; i < len; i++) {
-                var username = response[i].username;
-                var brandname = response[i].brandname;
-                var carname = response[i].carname;
-                var seatcount = response[i].seatcount;
-                var typename = response[i].typename;
-                var title = response[i].title;
-                var price = response[i].price;
-                var town = response[i].town;
-                var description = response[i].description;
+               let username = response[i].username;
+               let brandname = response[i].brandname;
+               let carname = response[i].carname;
+               let seatcount = response[i].seatcount;
+               let typename = response[i].typename;
+               let title = response[i].title;
+               let price = response[i].price;
+               let town = response[i].town;
+               let description = response[i].description;
+               let imgFileName = response[i].imgFileName;
 
                 var tr_str = "<div class='card'>" +
-                    "<img src='Images/Logo.PNG' alt='Avatar' id='car_image'>" +
+                    "<img alt='Avatar' id='car_image' src='Images/" + imgFileName + "'>" +
                     "<div class='vehicle_details'>" +
                     "<b>" + title + "</b><br><br>" +
                     "<i class=\"fas fa-car-side icon\" style=\"color: black\"></i>" + carname +
@@ -39,6 +27,7 @@ function GetAllCarsList() {
                     "<i class=\"fas fa-map-marked-alt icon\" style='margin-left: 20px;'></i>" + town + "<br>" +
                     "</div>" +
                     "</div>";
+                
                 $(".cards").append(tr_str);
             }
         }

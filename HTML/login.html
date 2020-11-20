@@ -22,7 +22,6 @@
                 stringJson += '"' + e.name + '":"' + e.value + '",';
             });
             stringJson = stringJson.substring(0, stringJson.length - 1) + "}";
-            "{usernae:loupid,passsword:secret}"
 
             $.ajax('../Php/Login.php', {
                 type: 'post',

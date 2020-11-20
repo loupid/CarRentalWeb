@@ -27,7 +27,7 @@
                 data.showdata = 'off';
             }
 
-            if (isValid(data)) {
+            if (isRegisterValid(data)) {
                 $.ajax('../Php/Register.php', {
                     type: 'post',
                     data: data,

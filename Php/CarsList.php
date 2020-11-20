@@ -4,7 +4,7 @@ include "Database/config.php";
 
 $return_arr = array();
 
-$query = "select u.Username as username, BrandName as brandname, CarName as carname, SeatCount as seatcount, NameType as typename, Title as title, Town as town, Description as description, Price as price from annouces inner join users u on annouces.IdUserOwner = u.IdUser;";
+$query = "select u.Username as username, BrandName as brandname, CarName as carname, SeatCount as seatcount, Category as typename, Title as title, Town as town, Description as description, Price as price, ImgFilePath as imgFileName from annouces inner join users u on annouces.IdUserOwner = u.IdUser;";
 
 $result = mysqli_query($con,$query);
 
@@ -20,6 +20,7 @@ while($row = mysqli_fetch_array($result)){
     $town = $row['town'];
     $price = $row['price'];
     $title = $row['title'];
+    $imgFileName = $row['imgFileName'];
 
     $return_arr[] = array("username" => $username,
         "brandname" => $brandname,
@@ -29,7 +30,8 @@ while($row = mysqli_fetch_array($result)){
         "description" => $description,
         "town" => $town,
         "price" => $price,
-        "title" => $title
+        "title" => $title,
+        "imgFileName" => $imgFileName
         );
 }
 

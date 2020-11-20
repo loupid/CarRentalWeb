@@ -14,13 +14,13 @@
 <body>
 <script>
     $(document).ready(() => {
-        debugger;
+
         let url = new URL(window.location.href);
         let username = url.searchParams.get("username");
         let $register = $('#register');
         if (username) {
             $('#btn_login').text(username);
-            $('#connexion').attr('href', renderpage('HTML/addAnnounce.html'));
+            $('#about').attr('href', 'HTML/addAnnounce.html').text('Ajouter une annonce');
             $register.text('Se déconnecter').attr('href', 'HTML/register.html');
         } else {
             $('#connexion').attr('href', 'HTML/login.html')
@@ -44,8 +44,8 @@
     </div>
     <nav>
         <ul class="nav_links">
-            <li><a href="#">À propos de nous</a></li>
-            <li><a id="register">S'inscrire</a></li>
+            <li><a id="about" href="#">À propos de nous</a></li>
+            <li><a id="register" href="#">S'inscrire</a></li>
         </ul>
     </nav>
     <a id="connexion">
