@@ -12,7 +12,7 @@ if ($uname != "" && $password != ""){
     $row = mysqli_fetch_array($result);
 
     $count = $row['cntUser'];
-    $iduser = $row['id'];
+    $_SESSION['userId'] = $row['id'];
 
     if($count > 0){
         echo 1;

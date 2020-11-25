@@ -48,7 +48,6 @@
                     }
                 });
 
-
                 if (!data.available){
                     data.available = "0";
                 }
@@ -57,8 +56,9 @@
                     type: 'post',
                     data: data,
                     success: (dataResult) => {
+                        dataResult = JSON.parse(dataResult);
                         if (dataResult.statusCode === 200) {
-                            window.location = 'index.html';
+                            window.location = '../index.html';
                             alert("Inscription réussi");
                         } else if (dataResult.statusCode === 201) {
                             alert("Erreur lors de l'enregistrement");
@@ -86,7 +86,8 @@
         <button id="btn_login">Se connecter</button>
     </a>
 </header>
-<div id="form" class="add_announce">
+<form id="form">
+<div class="add_announce">
     <div class="add_announce_container announce_details">
         <h1>Détails de l'annonce</h1>
         <hr>
@@ -173,5 +174,6 @@
     </div>
     <button type="submit" id="btn_confirm_add_announce">Publier l'annonce</button>
 </div>
+</form>
 </body>
 </html>
