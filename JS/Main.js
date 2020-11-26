@@ -1,13 +1,10 @@
 function openNav() {
-    $("#mySidenav").css({"width": "250px"});
-    $("#main_body").css({"marginLeft": "250px"});
+    $("#mySidenav").css({"marginLeft": "0px"});
     $("#icon_btn_burger").css({"color": "#fd5e53"});
-    $(".quick_filter").css({"left": "-15%"});
 }
 
 function closeNav() {
-    $("#mySidenav").css({"width": "0"});
-    $("#main_body").css({"marginLeft": "0"});
+    $("#mySidenav").css({"marginLeft": "-250px"});
     $("#icon_btn_burger").css({"color": "#ffffff"}).hover(function () {
         $(this).css("color", "#fd5e53")
     }, function () {

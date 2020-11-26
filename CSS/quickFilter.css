@@ -2,17 +2,19 @@
 
 .quick_filter{
     position: relative;
-    margin: 0 30% 10% 30%;
-    width: 81.3%;
-    height: 400px;
-    padding: 2% 6%;
+    display:block;
+    margin: 96px auto 96px auto;
+    width: 600px;
     background-color: #e5e7e9;
     transition: all .7s;
+    padding:48px 64px;
+    /*border:1px solid red;*/
 }
 
 .quick_filter .qf_title {
     font-family: 'Russo One', sans-serif;
     font-size: 35px;
+    margin:0;
 }
 
 .quick_filter .qf_description {
