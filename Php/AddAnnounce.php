@@ -12,7 +12,12 @@ $price = mysqli_real_escape_string($con,$_POST['price']);
 $available = mysqli_real_escape_string($con,$_POST['available']);
 $imgFilePath = mysqli_real_escape_string($con,$_POST['filename']);
 
+if ($available == "on") {
+    $available = 1;
+}else $available = 0;
+
 $iduser = $_SESSION['userId'];
+$user = $_SESSION['user'];
 
 $sql = "insert into annouces (IdUserOwner, Title, BrandName, Category, Description, CarName, SeatCount, town, Price, Available, ImgFilePath) 
 values ('$iduser','$title','$brand', '$category', '$description', '$model', '$seat_count', '$announce_localisation', '$price', '$available','$imgFilePath');";
@@ -20,6 +25,7 @@ values ('$iduser','$title','$brand', '$category', '$description', '$model', '$se
 if (mysqli_query($con, $sql)) {
     echo json_encode(array(
         "iduser"=>$iduser,
+        "user"=>$user,
         "title"=>$title,
         "brand"=>$brand,
         "category"=>$category,

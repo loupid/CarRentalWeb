@@ -3,22 +3,25 @@
 }
 
 .card {
+    padding: 5px;
+    margin: 5px;
     box-shadow: 0 3px 6px 0 rgba(0,0,0,0.2);
     transition: all 0.3s;
-    width: 40%;
+    width: -moz-fit-content;
     height: fit-content;
     border-radius: 5px;
     display: flex;
-    flex-direction: column;
 }
 
 .card:hover {
     box-shadow: 0 10px 20px 0 rgba(0,0,0,0.2);
+    /*transform: rotateY(180deg);*/
 }
 
 #car_image {
     float: top;
-    width: 100%;
+    width: 240px;
+    height: 216px;
     border-radius: 5px 5px 0 0;
 }
 

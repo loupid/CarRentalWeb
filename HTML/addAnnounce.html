@@ -20,105 +20,55 @@
     }
 
     $(document).ready(() => {
-        $('#btn_confirm_add_announce').click(() => {
-                let stringJsonInput = "{";
-                $('div#form :input').serializeArray().forEach((e) => {
-                    stringJsonInput += '"' + e.name + '":"' + e.value + '",';
-                });
-                stringJsonInput = stringJsonInput.substring(0, stringJsonInput.length - 1) + "}";
-                let data = JSON.parse(stringJsonInput);
-                debugger;
-                var file_data = $('#image').prop('files')[0];
-                data.filename = file_data.name;
-                if (!data.filename){
-                    data.filename = "Logo.png"
+        $('#form').submit(function () {
+            debugger;
+            var file_data = $('#image').prop('files')[0];
+            var form_data = new FormData();
+            form_data.append('file', file_data);
+
+            $.ajax('../Php/Upload.php',{
+                dataType: 'text',
+                cache: false,
+                contentType: false,
+                processData: false,
+                data: form_data,
+                type: 'post',
+                success: (e) => {
                 }
-                var form_data = new FormData();
-                form_data.append('file', file_data);
+            });
 
-                $.ajax('../Php/Upload.php',{
-                    dataType: 'text',
-                    cache: false,
-                    contentType: false,
-                    processData: false,
-                    data: form_data,
-                    type: 'post',
-                    success: (e) => {
-                        debugger;
-                    }
-                });
+            let x = {};
+            $.each($('#form').serializeArray(), function() {
+                x[this.name] = this.value;
+            });
 
-                if (!data.available){
-                    data.available = "0";
-                }
-                else data.available = "1";
-                $.ajax('../Php/AddAnnounce.php', {
-                    type: 'post',
-                    data: data,
-                    success: (dataResult) => {
-                        dataResult = JSON.parse(dataResult);
-                        if (dataResult.statusCode === 200) {
-                            window.location = '../index.html';
-                            alert("Inscription réussi");
-                        } else if (dataResult.statusCode === 201) {
-                            alert("Erreur lors de l'enregistrement");
-                        }
-                    }
-                });
-        }
-        );
-    });
+            if (!file_data.name){
+                x.filename = "Logo.png"
+            }else x.filename = file_data.name;
 
-    function sendannounce(e){
-        // let stringJsonInput = "{";
-        // $('div#form :input').serializeArray().forEach((e) => {
-        //     stringJsonInput += '"' + e.name + '":"' + e.value + '",';
-        // });
-        // stringJsonInput = stringJsonInput.substring(0, stringJsonInput.length - 1) + "}";
-        // let data = JSON.parse(stringJsonInput);
-        // debugger;
-        // var file_data = $('#image').prop('files')[0];
-        // data.filename = file_data.name;
-        // if (!data.filename){
-        //     data.filename = "Logo.png"
-        // }
-        // var form_data = new FormData();
-        // form_data.append('file', file_data);
-
-        debugger;
-        let test = $('#form');
-        var formData = JSON.stringify($("#Form").serializeArray());
-
-        $.ajax('../Php/Upload.php',{
-            dataType: 'text',
-            cache: false,
-            contentType: false,
-            processData: false,
-            data: form_data,
-            type: 'post',
-            success: (e) => {
-                debugger;
+            if (!x.available){
+                x.available = "off"
             }
-        });
 
-        if (!data.available){
-            data.available = "0";
-        }
-        else data.available = "1";
-        $.ajax('../Php/AddAnnounce.php', {
-            type: 'post',
-            data: data,
-            success: (dataResult) => {
-                dataResult = JSON.parse(dataResult);
-                if (dataResult.statusCode === 200) {
-                    window.location = '../index.html';
-                    alert("Ajout de l'annonce reussi");
-                } else if (dataResult.statusCode === 201) {
+            $.ajax('../Php/AddAnnounce.php', {
+                type: 'post',
+                data: x,
+                success: (dataResult) => {
+                    debugger;
+                    dataResult = JSON.parse(dataResult);
+                    if (dataResult.statusCode === 200) {
+                        window.location = '../index.html?username=' + dataResult.user;
+                        alert("Ajout de l'annonce reussi");
+                    } else if (dataResult.statusCode === 201) {
+                        alert("Erreur lors de l'enregistrement");
+                    }
+                },
+                error: (datares) => {
                     alert("Erreur lors de l'enregistrement");
                 }
-            }
+            });
         });
-    }
+    })
 </script>
 <header>
     <button type="submit" id="btn_burger" onclick="openNav()"><i id="icon_btn_burger" class="fas fa-bars"></i></button>
@@ -137,7 +87,8 @@
         <button id="btn_login">Se connecter</button>
     </a>
 </header>
-<form id="form" method="post" onsubmit="sendannounce(this)" on>
+<!--<form id="form" method="post" onsubmit="sendAnnounce($(this))">-->
+<form id="form" method="post">
     <div class="add_announce">
         <div class="add_announce_container announce_details">
             <h1>Détails de l'annonce</h1>

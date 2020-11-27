@@ -4,30 +4,26 @@ include "Database/config.php";
 
 $return_arr = array();
 
-$query = "select u.Username as username, BrandName as brandname, CarName as carname, SeatCount as seatcount, Category as typename, Title as title, Town as town, Description as description, Price as price, ImgFilePath as imgFileName from annouces inner join users u on annouces.IdUserOwner = u.IdUser;";
+$query = "select IdAnnounce as idannounce, BrandName as brandname, CarName as carname, SeatCount as seatcount, Title as title, Town as town, Price as price, ImgFilePath as imgFileName from annouces inner join users u on annouces.IdUserOwner = u.IdUser;";
 
 $result = mysqli_query($con,$query);
 
 $last_id = mysqli_insert_id($con);
 
 while($row = mysqli_fetch_array($result)){
-    $username = $row['username'];
+    $idannounce = $row['idannounce'];
+    $title = $row['title'];
     $brandname = $row['brandname'];
     $carname = $row['carname'];
     $seatcount = $row['seatcount'];
-    $typename = $row['typename'];
-    $description = $row['description'];
     $town = $row['town'];
     $price = $row['price'];
-    $title = $row['title'];
     $imgFileName = $row['imgFileName'];
 
-    $return_arr[] = array("username" => $username,
+    $return_arr[] = array("idannounce" => $idannounce,
         "brandname" => $brandname,
         "carname" => $carname,
         "seatcount" => $seatcount,
-        "typename" => $typename,
-        "description" => $description,
         "town" => $town,
         "price" => $price,
         "title" => $title,

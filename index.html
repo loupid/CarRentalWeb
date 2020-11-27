@@ -14,7 +14,6 @@
 <body>
 <script>
     $(document).ready(() => {
-
         let url = new URL(window.location.href);
         let username = url.searchParams.get("username");
         let $register = $('#register');
@@ -97,11 +96,11 @@
                 <button type="submit" id="qf_btn_search">Rechercher</button>
             </div>
         </div>
-<!--        <div class="cards">-->
-<!--            <script>-->
-<!--                GetAllCarsList();-->
-<!--//             </script>-->
-<!--        // </div>-->
+        <ul class="cards">
+            <script>
+                GetAllCarsList();
+            </script>
+        </ul>
     </div>
 </div>
 </body>
