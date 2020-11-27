@@ -4,7 +4,7 @@ include "Database/config.php";
 
 $return_arr = array();
 
-$query = "select IdAnnounce as idannounce, BrandName as brandname, CarName as carname, SeatCount as seatcount, Title as title, Town as town, Price as price, ImgFilePath as imgFileName from annouces inner join users u on annouces.IdUserOwner = u.IdUser;";
+$query = "select IdAnnounce as idannounce, BrandName as brandname, CarName as carname, SeatCount as seatcount, Title as title, Town as town, Price as price, ImgFilePath as imgFileName from annouces inner join users u on annouces.IdUserOwner = u.IdUser order by ReleaseDate desc;";
 
 $result = mysqli_query($con,$query);
 

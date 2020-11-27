@@ -19,8 +19,8 @@
         $("#span_image_choice").text(imageFile.files.item(0).name);
     }
 
-    $(document).ready(() => {
-        $('#form').submit(function () {
+    $(document).ready((e) => {
+        $('#form').submit(function (e) {
             debugger;
             var file_data = $('#image').prop('files')[0];
             var form_data = new FormData();
@@ -62,11 +62,9 @@
                     } else if (dataResult.statusCode === 201) {
                         alert("Erreur lors de l'enregistrement");
                     }
-                },
-                error: (datares) => {
-                    alert("Erreur lors de l'enregistrement");
                 }
             });
+            e.preventDefault();
         });
     })
 </script>
