@@ -10,64 +10,9 @@
     <script src="../JS/Main.js"></script>
     <script src="../JS/Get/ListOfCars.js"></script>
     <script src="../JS/RenderingManager.js"></script>
+    <script src="../JS/AddAnnounces.js"></script>
 </head>
 <body>
-<script>
-    function setImageText() {
-        var imageFile = document.getElementById('image');
-        debugger;
-        $("#span_image_choice").text(imageFile.files.item(0).name);
-    }
-
-    $(document).ready((e) => {
-        $('#form').submit(function (e) {
-            debugger;
-            var file_data = $('#image').prop('files')[0];
-            var form_data = new FormData();
-            form_data.append('file', file_data);
-
-            $.ajax('../Php/Upload.php',{
-                dataType: 'text',
-                cache: false,
-                contentType: false,
-                processData: false,
-                data: form_data,
-                type: 'post',
-                success: (e) => {
-                }
-            });
-
-            let x = {};
-            $.each($('#form').serializeArray(), function() {
-                x[this.name] = this.value;
-            });
-
-            if (!file_data.name){
-                x.filename = "Logo.png"
-            }else x.filename = file_data.name;
-
-            if (!x.available){
-                x.available = "off"
-            }
-
-            $.ajax('../Php/AddAnnounce.php', {
-                type: 'post',
-                data: x,
-                success: (dataResult) => {
-                    debugger;
-                    dataResult = JSON.parse(dataResult);
-                    if (dataResult.statusCode === 200) {
-                        window.location = '../index.html?username=' + dataResult.user;
-                        alert("Ajout de l'annonce reussi");
-                    } else if (dataResult.statusCode === 201) {
-                        alert("Erreur lors de l'enregistrement");
-                    }
-                }
-            });
-            e.preventDefault();
-        });
-    })
-</script>
 <header>
     <button type="submit" id="btn_burger" onclick="openNav()"><i id="icon_btn_burger" class="fas fa-bars"></i></button>
     <img class="logo" src="../Images/Logo.PNG" alt="logo">
@@ -85,7 +30,6 @@
         <button id="btn_login">Se connecter</button>
     </a>
 </header>
-<!--<form id="form" method="post" onsubmit="sendAnnounce($(this))">-->
 <form id="form" method="post">
     <div class="add_announce">
         <div class="add_announce_container announce_details">

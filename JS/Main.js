@@ -41,3 +41,9 @@ function isRegisterValid(data){
     }
     return true;
 }
+
+function setImageText() {
+    var imageFile = document.getElementById('image');
+    debugger;
+    $("#span_image_choice").text(imageFile.files.item(0).name);
+}
