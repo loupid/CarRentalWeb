@@ -1,6 +1,6 @@
 <?php
 
-include "Database/config.php";
+include "Database/Config.php";
 
 $return_arr = array();
 
@@ -34,13 +34,13 @@ while($row = mysqli_fetch_array($result)){
     $imgFileName = $row['imgFileName'];
 
     $return_arr[] = array("idannounce" => $idannounce,
-        "brandname" => $brandname,
+        "brand" => $brandname,
         "carname" => $carname,
         "seatcount" => $seatcount,
         "town" => $town,
         "price" => $price,
         "title" => $title,
-        "imgFileName" => $imgFileName
+        "imgFilePath" => $imgFileName
         );
 }
 
