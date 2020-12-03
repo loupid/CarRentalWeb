@@ -1,23 +1,24 @@
 <?php
 
-include "Database/config.php";
+include "Database/Config.php";
 
 $return_arr = array();
 
 if(!empty($_GET['searchby']) && isset($_GET['searchby'])){
     $searchValue = $_GET['searchby'];
-    $query = "select IdAnnounce as idannounce, BrandName as brandname, CarName as carname, SeatCount as seatcount, Title as title, Town as town, Price as price, ImgFilePath as imgFileName
-from annouces
+    $query = "select IdAnnounce as idannounce, BrandName as brandname, CarName as carname, SeatCount as seatcount, Title as title, Location as location, Price as price, ImgFilePath as imgfilepath
+    from annouces
     inner join users u on annouces.IdUserOwner = u.IdUser
-where
+    where
       upper(BrandName) like concat('%', concat(upper('$searchValue'),'%')) ||
       upper(CarName) like concat('%', concat(upper('$searchValue'),'%')) ||
       upper(SeatCount) like concat('%', concat(upper('$searchValue'),'%')) ||
       upper(Title) like concat('%', concat(upper('$searchValue'),'%')) ||
-      upper(Town) like concat('%', concat(upper('$searchValue'),'%')) ||
-      upper(Price) like concat('%', concat(upper('$searchValue'),'%'))
-order by ReleaseDate desc;";
-}else $query = "select IdAnnounce as idannounce, BrandName as brandname, CarName as carname, SeatCount as seatcount, Title as title, Town as town, Price as price, ImgFilePath as imgFileName from annouces inner join users u on annouces.IdUserOwner = u.IdUser order by ReleaseDate desc;";
+      upper(Location) like concat('%', concat(upper('$searchValue'),'%')) ||
+      upper(Price) like concat('%', concat(upper('$searchValue'),'%')) &&
+      Available = true
+    order by ReleaseDate desc;";
+}else $query = "select IdAnnounce as idannounce, BrandName as brandname, CarName as carname, SeatCount as seatcount, Title as title, Location as location, Price as price, ImgFilePath as imgfilepath from annouces inner join users u on annouces.IdUserOwner = u.IdUser where Available = true order by ReleaseDate desc;";
 
 $result = mysqli_query($con,$query);
 
@@ -29,18 +30,18 @@ while($row = mysqli_fetch_array($result)){
     $brandname = $row['brandname'];
     $carname = $row['carname'];
     $seatcount = $row['seatcount'];
-    $town = $row['town'];
+    $location = $row['location'];
     $price = $row['price'];
-    $imgFileName = $row['imgFileName'];
+    $imgfilepath = $row['imgfilepath'];
 
     $return_arr[] = array("idannounce" => $idannounce,
         "brandname" => $brandname,
         "carname" => $carname,
         "seatcount" => $seatcount,
-        "town" => $town,
+        "location" => $location,
         "price" => $price,
         "title" => $title,
-        "imgFileName" => $imgFileName
+        "imgfilepath" => $imgfilepath
         );
 }
 

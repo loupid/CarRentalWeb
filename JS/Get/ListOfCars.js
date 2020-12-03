@@ -18,8 +18,8 @@ function GetAllCarsList(item) {
                 let seatcount = response[i].seatcount;
                 let title = response[i].title;
                 let price = response[i].price;
-                let town = response[i].town;
-                let imgFileName = response[i].imgFileName;
+                let town = response[i].location;
+                let imgFileName = response[i].imgfilepath;
 
                 let card ="<a href=\"HTML/addAnnounce.html?id=" + id + "\">" +
                     "<li class='card'>" +

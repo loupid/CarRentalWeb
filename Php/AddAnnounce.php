@@ -2,56 +2,29 @@
 include "Database/config.php";
 
 $title = mysqli_real_escape_string($con,$_POST['title']);
-$brand = mysqli_real_escape_string($con,$_POST['brand']);
-$model = mysqli_real_escape_string($con,$_POST['model']);
+$brand = mysqli_real_escape_string($con,$_POST['brandname']);
+$carname = mysqli_real_escape_string($con,$_POST['carname']);
 $category = mysqli_real_escape_string($con,$_POST['category']);
-$seat_count = mysqli_real_escape_string($con,$_POST['seat_count']);
+$seat_count = mysqli_real_escape_string($con,$_POST['seatcount']);
 $description = mysqli_real_escape_string($con,$_POST['description']);
-$announce_localisation = mysqli_real_escape_string($con,$_POST['announce_localisation']);
+$location = mysqli_real_escape_string($con,$_POST['location']);
 $price = mysqli_real_escape_string($con,$_POST['price']);
 $available = mysqli_real_escape_string($con,$_POST['available']);
-$imgFilePath = mysqli_real_escape_string($con,$_POST['filename']);
-
-if ($available == "on") {
-    $available = 1;
-}else $available = 0;
+$imgFilePath = mysqli_real_escape_string($con,$_POST['imgfilepath']);
 
 $iduser = $_SESSION['userId'];
 $user = $_SESSION['user'];
 
-$sql = "insert into annouces (IdUserOwner, Title, BrandName, Category, Description, CarName, SeatCount, town, Price, Available, ImgFilePath) 
-values ('$iduser','$title','$brand', '$category', '$description', '$model', '$seat_count', '$announce_localisation', '$price', '$available','$imgFilePath');";
+$sql = "insert into annouces (IdUserOwner, Title, BrandName, Category, Description, CarName, SeatCount, Location, Price, Available, ImgFilePath) 
+values ('$iduser','$title','$brand', '$category', '$description', '$carname', '$seat_count', '$location', '$price', '$available','$imgFilePath');";
 
 if (mysqli_query($con, $sql)) {
     echo json_encode(array(
-        "iduser"=>$iduser,
-        "user"=>$user,
-        "title"=>$title,
-        "brand"=>$brand,
-        "category"=>$category,
-        "description"=>$description,
-        "model"=>$model,
-        "seat_count"=>$seat_count,
-        "announce_localisation"=>$announce_localisation,
-        "price"=>$price,
-        "available"=>$available,
-        "imgFilePath"=>$imgFilePath,
         "statusCode"=>200
         ));
 }
 else {
     echo json_encode(array(
-        "iduser"=>$iduser,
-        "title"=>$title,
-        "brand"=>$brand,
-        "category"=>$category,
-        "description"=>$description,
-        "model"=>$model,
-        "seat_count"=>$seat_count,
-        "announce_localisation"=>$announce_localisation,
-        "price"=>$price,
-        "available"=>$available,
-        "imgFilePath"=>$imgFilePath,
         "statusCode"=> $con->error
         ));
 }

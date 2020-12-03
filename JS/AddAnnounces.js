@@ -1,10 +1,9 @@
 $(document).ready((e) => {
     $('#form').submit(function (e) {
-        debugger;
-        var file_data = $('#image').prop('files')[0];
-        var form_data = new FormData();
+        let file_data = $('#image').prop('files')[0];
+        let form_data = new FormData();
         form_data.append('file', file_data);
-
+debugger;
         $.ajax('../Php/Upload.php',{
             dataType: 'text',
             cache: false,
@@ -22,18 +21,18 @@ $(document).ready((e) => {
         });
 
         if (!file_data.name){
-            x.filename = "Logo.png"
-        }else x.filename = file_data.name;
+            x.imgfilepath = "Logo.png"
+        }else x.imgfilepath = file_data.name;
 
         if (!x.available){
-            x.available = "off"
+            x.available = 0;
         }
+        else x.available = 1;
 
         $.ajax('../Php/AddAnnounce.php', {
             type: 'post',
             data: x,
             success: (dataResult) => {
-                debugger;
                 dataResult = JSON.parse(dataResult);
                 if (dataResult.statusCode === 200) {
                     window.location = '../index.html?username=' + dataResult.user;
