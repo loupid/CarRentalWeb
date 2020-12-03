@@ -5,7 +5,6 @@ $(document).ready(() => {
         $.each($('#form').serializeArray(), function() {
             data[this.name] = this.value;
         });
-debugger;
         if (isRegisterValid(data)) {
             $.ajax('../Php/Register.php', {
                 type: 'post',

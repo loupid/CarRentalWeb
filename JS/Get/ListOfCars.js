@@ -1,7 +1,6 @@
 function GetAllCarsList(item) {
     let data = {};
     data.searchby = item;
-    debugger;
     $.ajax({
         url: 'Php/CarsList.php',
         type: 'get',
@@ -9,7 +8,7 @@ function GetAllCarsList(item) {
         dataType: 'JSON',
         success: function (response) {
             $(".cards").empty();
-            debugger;
+            
             let len = response.length;
             for (let i = 0; i < len; i++) {
                 let id = response[i].idannounce;

@@ -3,7 +3,6 @@ $(document).ready((e) => {
         let file_data = $('#image').prop('files')[0];
         let form_data = new FormData();
         form_data.append('file', file_data);
-debugger;
         $.ajax('../Php/Upload.php',{
             dataType: 'text',
             cache: false,
