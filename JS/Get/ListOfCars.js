@@ -1,7 +1,6 @@
 function GetAllCarsList(item) {
     let data = {};
     data.searchby = item;
-    debugger;
     $.ajax({
         url: 'Php/CarsList.php',
         type: 'get',
@@ -9,7 +8,7 @@ function GetAllCarsList(item) {
         dataType: 'JSON',
         success: function (response) {
             $(".cards").empty();
-            debugger;
+            
             let len = response.length;
             for (let i = 0; i < len; i++) {
                 let id = response[i].idannounce;
@@ -18,8 +17,8 @@ function GetAllCarsList(item) {
                 let seatcount = response[i].seatcount;
                 let title = response[i].title;
                 let price = response[i].price;
-                let town = response[i].town;
-                let imgFileName = response[i].imgFileName;
+                let town = response[i].location;
+                let imgFileName = response[i].imgfilepath;
 
                 let card ="<a href=\"HTML/addAnnounce.html?id=" + id + "\">" +
                     "<li class='card'>" +

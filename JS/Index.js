@@ -20,7 +20,6 @@ $(document).ready(() => {
     GetAllCarsList();
 
     $('#btn_search').click((e)=>{
-        debugger
         GetAllCarsList($('#searchBox').val());
     });
 

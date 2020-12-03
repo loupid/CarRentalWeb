@@ -10,7 +10,6 @@ $(document).ready(() => {
             type: 'post',
             data: data,
             success: (response) => {
-                debugger;
                 if (response === "1") {
                     window.location = '../index.html?username=' + data.username;
                 } else {
