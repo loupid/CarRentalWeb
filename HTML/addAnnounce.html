@@ -10,7 +10,7 @@
     <script src="../JS/Main.js"></script>
     <script src="../JS/Get/ListOfCars.js"></script>
     <script src="../JS/RenderingManager.js"></script>
-    <script src="../JS/AddAnnounces.js"></script>
+    <script src="../JS/Post/AddAnnounces.js"></script>
 </head>
 <body>
 <header>
@@ -76,7 +76,7 @@
                     <h2>Disponible ?</h2>
                 </div>
                 <label class="register_switch">
-                    <input type="checkbox" name="available">
+                    <input type="checkbox" name="available" required>
                     <span class="register_slider round"></span>
                 </label>
             </div>
@@ -88,7 +88,7 @@
             <h3>Ajoutez une photo pour attirer l'attention sur votre annonce</h3>
             <div id="hide">
                 <label class="hand-cursor">
-                    <input type="file" id="image" accept="image/*" name="fileToUpload" onchange="setImageText()">
+                    <input type="file" id="image" accept="image/*" name="fileToUpload" onchange="setImageText()" required>
                     <span id="addimage">
                         <i class="fas fa-camera-retro icon" id="icon_camera" style="font-size: 25px"></i>
                         <span class="photo_text hidden-xs" id="span_image_choice">Choisir image</span>
@@ -103,7 +103,7 @@
             <div class="input_container">
                 <i class="fas fa-map-marked-alt icon"></i>
                 <input class="field announce_input_city" type="text" id="location" name="location"
-                       placeholder="Entrez une ville">
+                       placeholder="Entrez une ville" required>
             </div>
         </div>
 

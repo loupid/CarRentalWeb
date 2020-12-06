@@ -23,4 +23,13 @@ $(document).ready(() => {
         GetAllCarsList($('#searchBox').val());
     });
 
+    $('#qf_btn_search').click((e)=>{
+        let x = {};
+        $.each($('#form input').serializeArray(), function() {
+            x[this.name] = this.value;
+        });
+        debugger;
+        GetAllCarsList(x,true);
+    });
+
 })

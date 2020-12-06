@@ -10,7 +10,7 @@
     <script src="JS/Main.js"></script>
     <script src="JS/Get/ListOfCars.js"></script>
     <script src="JS/RenderingManager.js"></script>
-    <script src="JS/Index.js"></script>
+    <script src="JS/Post/Index.js"></script>
 </head>
 <body>
 <header>
@@ -42,38 +42,39 @@
                 <a href="#">Clients</a>
                 <a href="#">Contact</a>
             </div>
-            <div class="quick_filter">
-                <p class="qf_title">Location de véhicule au Canada</p>
-                <p class="qf_description">Recherchez des offres de location de voitures à proximité de votre
-                    emplacement</p>
-                <div class="qf_localisation">
-                    <div class="input_container">
-                        <i class="fas fa-map-marked-alt icon"></i>
-                        <input class="field input_city" type="text" id="localisation" name="location"
-                               placeholder="Entrez une ville">
+            <div id="form" class="quick_filter">
+                    <input type="hidden" name="method" value="quickfilter">
+                    <p class="qf_title">Location de véhicule au Canada</p>
+                    <p class="qf_description">Recherchez des offres de location de voitures à proximité de votre
+                        emplacement</p>
+                    <div class="qf_localisation">
+                        <div class="input_container">
+                            <i class="fas fa-map-marked-alt icon"></i>
+                            <input class="field input_city" type="text" id="localisation" name="location"
+                                   placeholder="Entrez une ville">
+                        </div>
+<!--                    <div class="input_container">-->
+<!--                        <i class="fas fa-arrows-alt-h icon"></i>-->
+<!--                        <input class="field input_km" type="number" id="search_radius" name="search_raduis"-->
+<!--                               placeholder="Km"><br>-->
+<!--                    </div>-->
+                    </div>
+                    <div class="price_range">
+                        <div class="input_container">
+                            <i class="fas fa-money-check-alt icon"></i>
+                            <input class="field" type="number" id="min_price" name="minprice" placeholder="min $">
+                        </div>
+                        <div class="input_container">
+                            <i class="fas fa-money-check-alt icon"></i>
+                            <input class="field" type="number" id="max_price" name="maxprice" placeholder="max $"><br>
+                        </div>
                     </div>
                     <div class="input_container">
-                        <i class="fas fa-arrows-alt-h icon"></i>
-                        <input class="field input_km" type="number" id="search_radius" name="search_raduis"
-                               placeholder="Km"><br>
+                        <i class="fas fa-users icon"></i>
+                        <input class="field" type="number" id="number_seats" name="seatcount"
+                               placeholder="Nombre de passagers"><br>
                     </div>
-                </div>
-                <div class="price_range">
-                    <div class="input_container">
-                        <i class="fas fa-money-check-alt icon"></i>
-                        <input class="field" type="number" id="min_price" name="minprice" placeholder="min $">
-                    </div>
-                    <div class="input_container">
-                        <i class="fas fa-money-check-alt icon"></i>
-                        <input class="field" type="number" id="max_price" name="maxprice" placeholder="max $"><br>
-                    </div>
-                </div>
-                <div class="input_container">
-                    <i class="fas fa-users icon"></i>
-                    <input class="field" type="number" id="number_seats" name="number_seats"
-                           placeholder="Nombre de passagers"><br>
-                </div>
-                <button type="submit" id="qf_btn_search">Rechercher</button>
+                    <button type="submit" id="qf_btn_search">Rechercher</button>
             </div>
         </div>
         <ul class="cards">

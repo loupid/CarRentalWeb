@@ -72,6 +72,23 @@ textarea {
     transition: all 0.3s;
 }
 
+#btn_confirm_rent_announce:hover {
+    background-color: #F39C12;
+    color: #000000;
+}
+
+#btn_confirm_rent_announce {
+    width: 110%;
+    padding: 9px 25px;
+    background: linear-gradient(135deg, #ff690f 0%, #e8381b 100%);
+    color: white;
+    font-size: 30px;
+    border: none;
+    cursor: pointer;
+    margin: 3% 0;
+    transition: all 0.3s;
+}
+
 #btn_confirm_add_announce:hover {
     background-color: #F39C12;
     color: #000000;

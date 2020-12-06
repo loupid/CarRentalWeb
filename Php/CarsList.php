@@ -4,7 +4,7 @@ include "Database/Config.php";
 
 $return_arr = array();
 
-if(!empty($_GET['searchby']) && isset($_GET['searchby'])){
+if(!empty($_GET['searchby']) && isset($_GET['searchby'])) {
     $searchValue = $_GET['searchby'];
     $query = "select IdAnnounce as idannounce, BrandName as brandname, CarName as carname, SeatCount as seatcount, Title as title, Location as location, Price as price, ImgFilePath as imgfilepath
     from annouces
@@ -18,7 +18,24 @@ if(!empty($_GET['searchby']) && isset($_GET['searchby'])){
       upper(Price) like concat('%', concat(upper('$searchValue'),'%')) &&
       Available = true
     order by ReleaseDate desc;";
-}else $query = "select IdAnnounce as idannounce, BrandName as brandname, CarName as carname, SeatCount as seatcount, Title as title, Location as location, Price as price, ImgFilePath as imgfilepath from annouces inner join users u on annouces.IdUserOwner = u.IdUser where Available = true order by ReleaseDate desc;";
+}elseif(!empty($_GET['method']) && isset($_GET['method']) && $_GET['method'] == 'quickfilter'){
+    $seatcount = $_GET['seatcount'];
+    $location = $_GET['location'];
+    $minprice = $_GET['minprice'];
+    $maxprice = $_GET['maxprice'];
+
+    $query = "select IdAnnounce as idannounce, BrandName as brandname, CarName as carname, SeatCount as seatcount, Title as title, Location as location, Price as price, ImgFilePath as imgfilepath
+    from annouces
+    inner join users u on annouces.IdUserOwner = u.IdUser
+    where
+      upper(SeatCount) like concat('%', concat(upper('$seatcount'),'%')) &&
+      upper(Location) like concat('%', concat(upper('$location'),'%')) &&
+      Price between '$minprice' and '$maxprice' &&
+      Available = true
+    order by ReleaseDate desc;";
+}else{
+    $query = "select IdAnnounce as idannounce, BrandName as brandname, CarName as carname, SeatCount as seatcount, Title as title, Location as location, Price as price, ImgFilePath as imgfilepath from annouces inner join users u on annouces.IdUserOwner = u.IdUser where Available = true order by ReleaseDate desc;";
+}
 
 $result = mysqli_query($con,$query);
 

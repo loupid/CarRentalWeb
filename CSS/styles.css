@@ -4,7 +4,7 @@
 @import "quickFilter.css";
 @import "cardview.css";
 @import "loginregister.css";
-@import "addAnnounce.css";
+@import "announce.css";
 
 /*TODO Exploration for responsive*/
 @media only screen and (max-width:620px) {
