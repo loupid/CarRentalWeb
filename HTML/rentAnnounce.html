@@ -30,86 +30,67 @@
         <button id="btn_login">Se connecter</button>
     </a>
 </header>
-    <form id="form" method="post">
-        <input type="hidden" name="idannounce"/>
-        <div class="add_announce">
-            <div class="add_announce_container announce_media">
-                <h1>Médias</h1>
-                <hr>
-                <h3>Photo de votre annonce</h3>
-                <div id="hide">
-                    <img src="../Images/Logo.PNG" alt="" style="width: 100%">
-                </div>
-            </div>
-            <div class="add_announce_container announce_details">
-                <h1>Détails de l'annonce</h1>
-                <hr>
-                <div class="input_container_addAnnounce input_container">
-                    <i class="fas fa-font icon" style="color: black"></i>
-                    <input class="field" type="text" id="title" name="title" placeholder="Titre de l'annonce" readonly>
-                </div>
-
-                <div class="input_container_addAnnounce input_container">
-                    <i class="fas fa-car icon" style="color: black"></i>
-                    <input class="field" type="text" id="brand" name="brandname" placeholder="Marque" readonly>
-                </div>
-
-                <div class="input_container_addAnnounce input_container">
-                    <i class="fas fa-car-side icon" style="color: black"></i>
-                    <input class="field" type="text" id="model" name="carname" placeholder="Modèle" readonly>
-                </div>
-
-                <div class="input_container_addAnnounce input_container">
-                    <i class="fas fa-th icon" style="color: black"></i>
-                    <input class="field" type="text" id="category" name="category"
-                           placeholder="Catégorie" required readonly/>
-                </div>
-
-                <div class="input_container_addAnnounce input_container">
-                    <i class="fas fa-users icon" style="color: black"></i>
-                    <input class="field" type="text" id="seat_count" name="seatcount" step="1" min="1"
-                           placeholder="Nombre de passagers" readonly/>
-                </div>
-
-                <div class="input_container_addAnnounce input_container">
-                    <i class="fas fa-comment-alt icon" style="color: black"></i>
-                    <textarea name="description" class="field" id="description" rows="5" style="color: black" placeholder="Description" readonly></textarea>
-                </div>
-
-                <div class="add_announce_available">
-                    <div class="add_announce_available_text input_container">
-                        <i class="fas fa-clipboard-check" id="icon_available" style="font-size: 25px"></i>
-                        <h2>Disponible ?</h2>
-                    </div>
-                    <label class="register_switch">
-                        <input type="checkbox" name="available" readonly/>
-                        <span class="register_slider round"></span>
-                    </label>
-                </div>
-            </div>
-
-
-            <div class="add_announce_container announce_localisation">
-                <h1>Emplacement</h1>
-                <hr>
-                <div class="input_container">
-                    <i class="fas fa-map-marked-alt icon"></i>
-                    <input class="field announce_input_city" type="text" id="location" name="location"
-                           placeholder="Entrez une ville" readonly/>
-                </div>
-            </div>
-
-            <div class="add_announce_container announce_price">
-                <h1>Prix</h1>
-                <hr>
-                <div class="input_container_addAnnounce input_container">
-                    <i class="fas fa-dollar-sign icon" style="color: black"></i>
-                    <input class="field" type="number" id="price" name="price"
-                           placeholder="Prix par jour" min="0.01" step="0.01" readonly/>
-                </div>
-            </div>
-            <button type="submit" id="btn_confirm_rent_announce">Louer la voiture</button>
+<div id="form" class="add_announce">
+    <div class="add_announce_container announce_media">
+        <h1>Médias</h1>
+        <hr>
+        <h3>Photo de votre annonce</h3>
+        <div id="hide">
+            <img id="imgfilepath" src="../Images/Logo.PNG" alt="" style="width: 100%; height: 100%">
         </div>
-    </form>
+    </div>
+    <div class="add_announce_container announce_details">
+        <h1>Détails de l'annonce</h1>
+        <hr>
+        <div class="input_container_addAnnounce input_container">
+            <i class="fas fa-font icon" style="color: black"></i>
+            <input class="field" type="text" id="title" name="title" placeholder="Titre de l'annonce" readonly>
+        </div>
+        <div class="input_container_addAnnounce input_container">
+            <i class="fas fa-car icon" style="color: black"></i>
+            <input class="field" type="text" id="brandname" name="brandname" placeholder="Marque" readonly>
+        </div>
+        <div class="input_container_addAnnounce input_container">
+            <i class="fas fa-car-side icon" style="color: black"></i>
+            <input class="field" type="text" id="carname" name="carname" placeholder="Modèle" readonly>
+        </div>
+        <div class="input_container_addAnnounce input_container">
+            <i class="fas fa-th icon" style="color: black"></i>
+            <input class="field" type="text" id="category" name="category"
+                   placeholder="Catégorie" required readonly/>
+        </div>
+        <div class="input_container_addAnnounce input_container">
+            <i class="fas fa-users icon" style="color: black"></i>
+            <input class="field" type="text" id="seatcount" name="seatcount" step="1" min="1"
+                   placeholder="Nombre de passagers" readonly/>
+        </div>
+        <div class="input_container_addAnnounce input_container">
+            <i class="fas fa-comment-alt icon" style="color: black"></i>
+            <textarea name="description" class="field" id="description" rows="5" style="color: black" placeholder="Description" readonly></textarea>
+        </div>
+    </div>
+    <div class="add_announce_container announce_localisation">
+        <h1>Emplacement</h1>
+        <hr>
+        <div class="input_container">
+            <i class="fas fa-map-marked-alt icon"></i>
+            <input class="field announce_input_city" type="text" id="location" name="location"
+                   placeholder="Entrez une ville" readonly/>
+        </div>
+    </div>
+    <div class="add_announce_container announce_price">
+        <h1>Prix</h1>
+        <hr>
+        <div class="input_container_addAnnounce input_container">
+            <i class="fas fa-dollar-sign icon" style="color: black"></i>
+            <input class="field" type="number" id="price" name="price"
+                   placeholder="Prix par jour" min="0.01" step="0.01" readonly/>
+        </div>
+    </div>
+    <button type="submit" id="btn_confirm_rent_announce">Louer la voiture</button>
+</div>
 </body>
 </html>
+
+
+

@@ -28,7 +28,6 @@ $(document).ready(() => {
         $.each($('#form input').serializeArray(), function() {
             x[this.name] = this.value;
         });
-        debugger;
         GetAllCarsList(x,true);
     });
 

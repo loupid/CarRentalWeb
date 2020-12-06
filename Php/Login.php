@@ -15,7 +15,7 @@ if ($uname != "" && $password != ""){
     $_SESSION['user'] = $row['username'];
 
     if($count > 0){
-        echo 1;
+        echo $row['id'];
     }else{
         echo 0;
     }

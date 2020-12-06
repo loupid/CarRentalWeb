@@ -10,7 +10,7 @@ $(document).ready(() => {
             type: 'post',
             data: data,
             success: (response) => {
-               if (response === "1") {
+               if (response >= 1) {
                     window.location = '../index.html?username=' + data.username;
                 } else {
                     alert("Le nom de l'utilisateur ou le mot de passe est incorrecte")

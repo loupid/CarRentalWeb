@@ -8,7 +8,6 @@ if(!empty($_GET['searchby']) && isset($_GET['searchby'])) {
     $searchValue = $_GET['searchby'];
     $query = "select IdAnnounce as idannounce, BrandName as brandname, CarName as carname, SeatCount as seatcount, Title as title, Location as location, Price as price, ImgFilePath as imgfilepath
     from annouces
-    inner join users u on annouces.IdUserOwner = u.IdUser
     where
       upper(BrandName) like concat('%', concat(upper('$searchValue'),'%')) ||
       upper(CarName) like concat('%', concat(upper('$searchValue'),'%')) ||
@@ -26,7 +25,6 @@ if(!empty($_GET['searchby']) && isset($_GET['searchby'])) {
 
     $query = "select IdAnnounce as idannounce, BrandName as brandname, CarName as carname, SeatCount as seatcount, Title as title, Location as location, Price as price, ImgFilePath as imgfilepath
     from annouces
-    inner join users u on annouces.IdUserOwner = u.IdUser
     where
       upper(SeatCount) like concat('%', concat(upper('$seatcount'),'%')) &&
       upper(Location) like concat('%', concat(upper('$location'),'%')) &&
