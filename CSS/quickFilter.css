@@ -28,6 +28,11 @@
     width: 100%;
 }
 
+.input_city {
+    margin-bottom: 5px;
+    width: 100%;
+}
+
 .quick_filter .qf_localisation{
     display: flex;
     margin: 5px 0;
@@ -54,8 +59,8 @@
     color: #000000;
 }
 
-.input_container {
-    width: 100.5%;
+.input_container, .price_range .input_container {
+    width: calc(100% - 70px);
 }
 
 .input_container i {
@@ -82,10 +87,15 @@
 
 #min_price {
     margin-right: 5px;
+    width: calc(100% - 75px);
+}
+
+#max_price{
+    width: calc(100% - 70px);
 }
 
 #number_seats {
-    width: 88.2%;
+    width: 100%;
     margin-bottom: 5px;
 }
 
