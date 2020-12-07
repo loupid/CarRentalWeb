@@ -18,17 +18,27 @@ if (!isset($_POST['iduserowner']) && empty($_POST['iduserowner'])){
 }
 else $iduser = intval(mysqli_real_escape_string($con,$_POST['iduserowner']));
 
-$sql = "insert into annouces (IdUserOwner, Title, BrandName, Category, Description, CarName, SeatCount, Location, Price, Available, ImgFilePath) 
-values ('$iduser','$title','$brand', '$category', '$description', '$carname', '$seat_count', '$location', '$price', '$available','$imgFilePath');";
+$sql = "update annouces 
+set Title = '$title',
+    BrandName = '$brand',
+    CarName = '$carname',
+    Category = '$category',
+    Description = '$description',
+    SeatCount = '$seat_count',
+    Location = '$location',
+    Price = '$price',
+    ImgFilePath = '$imgFilePath',
+    Available = '' 
+where IdAnnounce = '';";
 
 if (mysqli_query($con, $sql)) {
     echo json_encode(array(
         "user"=>$_SESSION['user'],
         "statusCode"=>200
-        ));
+    ));
 }
 else {
     echo json_encode(array(
         "statusCode"=> $con->error
-        ));
+    ));
 }

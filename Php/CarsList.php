@@ -49,7 +49,8 @@ while($row = mysqli_fetch_array($result)){
     $price = $row['price'];
     $imgfilepath = $row['imgfilepath'];
 
-    $return_arr[] = array("idannounce" => $idannounce,
+    $return_arr[] = array(
+        "idannounce" => $idannounce,
         "brandname" => $brandname,
         "carname" => $carname,
         "seatcount" => $seatcount,

@@ -7,7 +7,7 @@ $password = mysqli_real_escape_string($con,$_POST['password']);
 
 if ($uname != "" && $password != ""){
     $sql_query = "select IdUser as id, Username as username, count(*)as cntUser from users 
-                    where Username = '$uname' or email = '$uname'  and Password = '$password';";
+                    where Username = '$uname' and Password = '$password';";
     $result = mysqli_query($con,$sql_query);
     $row = mysqli_fetch_array($result);
 
@@ -18,7 +18,7 @@ if ($uname != "" && $password != ""){
     if($count > 0){
         echo $row['id'];
     }else{
-        echo $password;
+        echo 0;
     }
 }else echo 0;
 

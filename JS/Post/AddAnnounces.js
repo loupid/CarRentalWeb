@@ -14,6 +14,7 @@ $(document).ready(() => {
             }
         });
 
+        debugger;
         let x = {};
         $.each($('#form').serializeArray(), function () {
             x[this.name] = this.value;
