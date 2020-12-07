@@ -1,34 +1,93 @@
-.cars_list {
-    display: flex;
+.cards_title {
+    margin-left:48px;
+    font-size:150%;
+}
+
+.cards_title span {
+    font-size:100%;
+}
+
+.cards {
+    display:block;
+    width:100%;
+    list-style-type: none;
+    padding:0;
+    margin:0;
+}
+
+a.card_item {
+    display:inline-block;
+    float:left;
+    width:50%;
+    padding:0;
+    margin:0;
 }
 
 .card {
-    padding: 5px;
-    margin: 5px;
+    position:relative;
+    display:flex;
+    padding:0;
+    margin:32px;
     box-shadow: 0 3px 6px 0 rgba(0,0,0,0.2);
     transition: all 0.3s;
-    width: -moz-fit-content;
-    height: fit-content;
-    border-radius: 5px;
-    display: flex;
 }
 
 .card:hover {
     box-shadow: 0 10px 20px 0 rgba(0,0,0,0.2);
-    /*transform: rotateY(180deg);*/
 }
 
-#car_image {
-    float: top;
-    width: 240px;
-    height: 216px;
-    border-radius: 5px 5px 0 0;
+.car_image {
+    max-width:256px;
+    width:256px;
+    max-height:256px;
+    height:256px;
+    flex: 1 1 0%;
+    background-position: center;
+    background-size: cover;
 }
 
 .vehicle_details {
-    padding: 2px 16px;
+    flex: 1 1 0%;
+    padding: 32px;
+    font-size: 20px;
 }
 
-.vehicle_details * {
-    font-size: 20px;
+.vehicle_details .title {
+    font-weight:bold;
+    font-size:28px;
+}
+
+.vehicle_details .spec {
+    width:100%;
+}
+
+.vehicle_details .spec div {
+    width:100%;
+    margin-top:6px;
+    font-weight:bold;
+}
+
+.vehicle_details .spec div span {
+    font-weight: normal;
+}
+
+.vehicle_details .spec div i {
+    width:32px;
+    text-align:center;
+}
+
+.card button.btn {
+    display:block;
+    position:absolute;
+    bottom:32px;
+    right:32px;
+    padding:8px 12px;
+    background:linear-gradient(135deg, #ff690f 0%, #e8381b 100%);
+    border:none;
+    outline:none;
+    color:white;
+}
+
+.card button.btn:hover {
+    cursor:pointer;
 }
