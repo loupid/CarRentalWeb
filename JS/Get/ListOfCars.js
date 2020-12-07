@@ -27,9 +27,12 @@ function GetAllCarsList(item, isQuickFilter) {
                 let location = response[i].location;
                 let imgFileName = response[i].imgfilepath;
 
+                let imgUrl = "Images/" + imgFileName;
+                imgUrl = !imageExists(imgUrl) ? "Images/default.png" : imgUrl;
+
                 let card ="<a href=\"HTML/rentAnnounce.html?id=" + id + "\">" +
                     "<li class='card'>" +
-                    "<img alt='Avatar' id='car_image' src='Images/" + imgFileName + "'>" +
+                    "<img alt='Avatar' id='car_image' src='" + imgUrl + "'>" +
                     "<div class='vehicle_details'>" +
                     "<b>" + title + "</b><br><br>" +
                     "<i class=\"fas fa-car-side icon\" style=\"color: black\"></i>" + brandname + " " + carname +
@@ -44,4 +47,13 @@ function GetAllCarsList(item, isQuickFilter) {
             }
         }
     });
+}
+
+function imageExists(image_url){
+    let http = new XMLHttpRequest();
+
+    http.open('HEAD', image_url, false);
+    http.send();
+
+    return http.status !== 404;
 }
