@@ -28,7 +28,7 @@ set Title = '$title',
     Location = '$location',
     Price = '$price',
     ImgFilePath = '$imgFilePath',
-    Available = '' 
+    Available = '$available' 
 where IdAnnounce = '';";
 
 if (mysqli_query($con, $sql)) {

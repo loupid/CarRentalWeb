@@ -7,7 +7,11 @@ $(document).ready((e)=>{
         data: jsonData,
         success: (response)=>{
             let result = JSON.parse(response);
-            $('#imgfilepath').attr('src', '../Images/'+ result['imgfilepath']);
+
+            let imgUrl = "../Images/" + result['imgfilepath'];
+            imgUrl = !imageExists(imgUrl) ? "../Images/default.png" : imgUrl;
+
+            $('#imgfilepath').attr('src', imgUrl);
 
             $.each($('#form input').serializeArray(), function() {
                 $('#'+this.name).val(result[this.name]);

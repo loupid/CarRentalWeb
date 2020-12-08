@@ -20,15 +20,15 @@ if(!empty($_GET['searchby']) && isset($_GET['searchby'])) {
 }elseif(!empty($_GET['method']) && isset($_GET['method']) && $_GET['method'] == 'quickfilter'){
     $seatcount = $_GET['seatcount'];
     $location = $_GET['location'];
-    $minprice = $_GET['minprice'];
-    $maxprice = $_GET['maxprice'];
-
+    $minprice = !empty($_GET['minprice']) ? $_GET['minprice']: 0;
+    $maxprice = !empty($_GET['maxprice']) ? $_GET['maxprice']: 9999999999.99;
+    
     $query = "select IdAnnounce as idannounce, BrandName as brandname, CarName as carname, SeatCount as seatcount, Title as title, Location as location, Price as price, ImgFilePath as imgfilepath
     from annouces
     where
-      upper(SeatCount) like concat('%', concat(upper('$seatcount'),'%')) &&
-      upper(Location) like concat('%', concat(upper('$location'),'%')) &&
-      Price between '$minprice' and '$maxprice' &&
+      upper(SeatCount) like concat('%', concat(upper('$seatcount'),'%')) and
+      upper(Location) like concat('%', concat(upper('$location'),'%')) and
+      (Price >= '$minprice' and price <= '$maxprice') and
       Available = true
     order by ReleaseDate desc;";
 }else{

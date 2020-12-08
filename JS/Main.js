@@ -28,7 +28,7 @@ function isRegisterValid(data){
                         return false;
                 }
                 if (key === "phonenumber") {
-                    if (data[key].length > 10)
+                    if (data[key].length > 14)
                         return false
                 }
                 if (key === "password"){
@@ -45,4 +45,13 @@ function isRegisterValid(data){
 function setImageText() {
     let imageFile = document.getElementById('image');
     $("#span_image_choice").text(imageFile.files.item(0).name);
+}
+
+function imageExists(image_url){
+    let http = new XMLHttpRequest();
+
+    http.open('HEAD', image_url, false);
+    http.send();
+
+    return http.status !== 404;
 }

@@ -1,4 +1,6 @@
 $(document).ready(() => {
+    $('#phonenumber').inputmask("(999) 999-9999");
+
     $('#form').submit((e) => {
 
         let data = {};
