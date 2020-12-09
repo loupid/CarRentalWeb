@@ -12,8 +12,9 @@ if ($uname != "" && $password != ""){
     $row = mysqli_fetch_array($result);
 
     $count = $row['cntUser'];
-    $_SESSION['userId'] = $row['id'];
-    $_SESSION['user'] = $row['username'];
+
+    setcookie($cookie_userid, $row['id'], time() + (86400 * 5), "/");
+    setcookie($cookie_username, $row['username'], time() + (86400 * 5), "/");
 
     if($count > 0){
         echo $row['id'];

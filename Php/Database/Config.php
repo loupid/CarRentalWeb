@@ -1,5 +1,6 @@
 <?php
-session_start();
+$cookie_userid = 'userid';
+$cookie_username = 'username';
 
 $host = "206.167.140.56"; /* Host name */
 //$host = "localhost"; /* Host name */

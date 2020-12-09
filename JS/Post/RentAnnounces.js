@@ -1,25 +1,7 @@
 $(document).ready((e)=>{
-    let url = new URL(window.location.href);
-    let jsonData = {};
-    jsonData.idannounce = url.searchParams.get('id');
-    $.ajax('../Php/GetAnnounceInfo.php',{
-        type: "get",
-        data: jsonData,
-        success: (response)=>{
-            let result = JSON.parse(response);
+    setNavBar('../');
 
-            let imgUrl = "../Images/" + result['imgfilepath'];
-            imgUrl = !imageExists(imgUrl) ? "../Images/default.png" : imgUrl;
-
-            $('#imgfilepath').attr('src', imgUrl);
-
-            $.each($('#form input').serializeArray(), function() {
-                $('#'+this.name).val(result[this.name]);
-            });
-
-            $('#description').val(result['description']);
-        }
-    });
+    getAnnounce();
 
     $('#btn_confirm_rent_announce').click((e)=>{
         $.ajax('../Php/AddRent.php',{
@@ -27,8 +9,9 @@ $(document).ready((e)=>{
             data: jsonData,
             success: (response) => {
                 response = JSON.parse(response);
+                debugger;
                 if (response.statusCode === 200){
-                    window.location = '../index.html?username=' + dataResult.user;
+                    window.location = '../index.html?username=' + response.user;
                 }
             }
         })

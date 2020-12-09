@@ -5,17 +5,11 @@
     <title>Location de véhicule au Canada</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="CSS/styles.css" type="text/css">
-    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="JS/Main.js"></script>
-    <script src="JS/Get/ListOfCars.js"></script>
-    <script src="JS/RenderingManager.js"></script>
-    <script src="JS/Post/Index.js"></script>
 </head>
 <body>
 <header>
     <button type="submit" id="btn_burger" onclick="openNav()"><i id="icon_btn_burger" class="fas fa-bars"></i></button>
-    <img class="logo" src="Images/Logo.PNG" alt="logo">
+    <img class="logo" src="Images/Logo.PNG" alt="logo" onclick="window.location = 'index.html'">
     <div class="search">
         <input id="searchBox" type="text" class="search_box" placeholder="Rechercher..."/>
         <button type="submit" id="btn_search"><i class="fa fa-search"></i></button>
@@ -23,7 +17,6 @@
 
     <nav>
         <ul class="nav_links">
-            <li><a id="about" href="#">À propos de nous</a></li>
             <li><a id="register" href="#">S'inscrire</a></li>
         </ul>
     </nav>
@@ -37,10 +30,10 @@
         <div class="test">
             <div id="mySidenav" class="sidenav">
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                <a href="#">Acceuil</a>
-                <a href="#">Mes locations</a>
-                <a href="#">Mes announces</a>
-                <a href="#">Mon compte</a>
+                <a href="index.html">Acceuil</a>
+                <a href="HTML/myRents.html">Mes locations</a>
+                <a href="HTML/myAnnounces.html">Mes annonces</a>
+                <a href="HTML/editRegister.html">Mon compte</a>
             </div>
             <div id="form" class="quick_filter">
                 <input type="hidden" name="method" value="quickfilter">
@@ -50,7 +43,7 @@
                 <div class="input_container">
                     <i class="fas fa-map-marked-alt icon"></i>
                     <input class="field input_city" type="text" id="localisation" name="location"
-                           placeholder="Entrez une ville">
+                           placeholder="Entrez une ville"/>
                 </div>
 
                 <div class="price_range">
@@ -77,5 +70,11 @@
         </ul>
     </div>
 </div>
+<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="JS/Main.js"></script>
+<script src="JS/Get/ListOfCars.js"></script>
+<script src="JS/RenderingManager.js"></script>
+<script src="JS/Post/Index.js"></script>
 </body>
 </html>

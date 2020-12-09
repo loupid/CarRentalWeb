@@ -1,26 +1,11 @@
-$(document).ready(() => {
-    let url = new URL(window.location.href);
-    let username = url.searchParams.get("username");
-    let $register = $('#register');
-    if (username) {
-        $('#btn_login').text(username);
-        $('#about').attr('href', 'HTML/addAnnounce.html').text('Ajouter une annonce');
-        $register.text('Se déconnecter').attr('href', 'HTML/register.html');
-    } else {
-        $('#connexion').attr('href', 'HTML/login.html')
-    }
+$(document).ready((e) => {
 
-    if ($register.text() === "S'inscrire") {
-        $register.attr("href", 'HTML/register.html');
-    }
+    setNavBar('');
 
-    if ($register.text() === "Se déconnecter") {
-        $register.attr("href", 'HTML/login.html');
-    }
-    GetAllCarsList();
+    GetAllAvailableCarsList();
 
-    $('#btn_search').click((e)=>{
-        GetAllCarsList($('#searchBox').val());
+    $('#btn_search').click(()=>{
+        GetAllAvailableCarsList($('#searchBox').val());
     });
 
     $('#qf_btn_search').click((e)=>{
@@ -28,7 +13,7 @@ $(document).ready(() => {
         $.each($('#form input').serializeArray(), function() {
             x[this.name] = this.value;
         });
-        GetAllCarsList(x,true);
+        GetAllAvailableCarsList(x,true);
     });
 
 })

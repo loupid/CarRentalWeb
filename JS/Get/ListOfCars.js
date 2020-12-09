@@ -1,4 +1,4 @@
-function GetAllCarsList(item, isQuickFilter) {
+function GetAllAvailableCarsList(item, isQuickFilter) {
     let cards = $(".cards");
     let data = {};
     if (!isQuickFilter){
@@ -28,7 +28,7 @@ function GetAllCarsList(item, isQuickFilter) {
                 let imgFileName = response[i].imgfilepath;
 
                 let imgUrl = "Images/" + imgFileName;
-                imgUrl = !imageExists(imgUrl) ? "Images/default.png" : imgUrl;
+                imgUrl = !imageExists(imgUrl) ? "Images/default_car.png" : imgUrl;
 
                 let card = `
                     <a class='card_item' href="HTML/rentAnnounce.html?id=${id}">
@@ -50,7 +50,7 @@ function GetAllCarsList(item, isQuickFilter) {
                                         <span>${price} $/jour</span>
                                     </div>
                                     <div>
-                                        <i class=\"fas fa-map-marked-alt icon\"></i> Location
+                                        <i class=\"fas fa-map-marked-alt icon\"></i> Localisation
                                         <span>${location}</span>
                                     </div>
                                 </div>
@@ -66,4 +66,54 @@ function GetAllCarsList(item, isQuickFilter) {
     });
 }
 
+function createCards(response){
+    cards.empty();
+    let len = response.length;
+    $("#carCount").text(len.toString());
+    for (let i = 0; i < len; i++) {
+        let id = response[i].idannounce;
+        let brandname = response[i].brandname;
+        let carname = response[i].carname;
+        let seatcount = response[i].seatcount;
+        let title = response[i].title;
+        let price = response[i].price;
+        let location = response[i].location;
+        let imgFileName = response[i].imgfilepath;
+
+        let imgUrl = "Images/" + imgFileName;
+        imgUrl = !imageExists(imgUrl) ? "Images/default_car.png" : imgUrl;
+
+        let card = `
+                    <a class='card_item' href="HTML/rentAnnounce.html?id=${id}">
+                        <li class='card'>
+                            <div class='car_image' style='background-image: url("${imgUrl}")'></div>
+                            <div class='vehicle_details'>
+                                <span class="title"> ${title}</span><br>
+                                <div class="spec">
+                                    <div>
+                                        <i class=\"fas fa-car-side icon\"></i> Voiture 
+                                        <span>${brandname} ${carname}</span>
+                                    </div>
+                                    <div>
+                                        <i class=\"fas fa-users icon\"></i> Nombre de passagers
+                                        <span>${seatcount} passagers</span>
+                                    </div>
+                                    <div>
+                                        <i class=\"fas fa-dollar-sign icon\"></i> Prix
+                                        <span>${price} $/jour</span>
+                                    </div>
+                                    <div>
+                                        <i class=\"fas fa-map-marked-alt icon\"></i> Localisation
+                                        <span>${location}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="btn">Voir l'article</button>
+                        </li>
+                    </a>
+                `;
+
+        cards.append(card);
+    }
+}
 

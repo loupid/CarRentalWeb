@@ -1,5 +1,6 @@
 $(document).ready(() => {
     setNavBar('../')
+    getAnnounce();
 
     $('#form').submit(function (e) {
         let file_data = $('#image').prop('files')[0];

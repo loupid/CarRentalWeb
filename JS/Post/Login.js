@@ -12,7 +12,7 @@ $(document).ready(() => {
             success: (response) => {
                 debugger;
                 if (response >= 1) {
-                    window.location = '../index.html?username=' + data.username;
+                    window.location = '../index.html';
                 } else {
                     alert("Le nom de l'utilisateur ou le mot de passe est incorrecte")
                 }

@@ -1,14 +1,12 @@
 <?php
 include "Database/config.php";
 
-$iduser = mysqli_real_escape_string($con,$_POST['iduserowner']);
 $idannounce = mysqli_real_escape_string($con,$_POST['idannounce']);
 
-
-$sql = "insert into rentals (IdAnnounce, IdUserClient) values ('$idannounce','$iduser');";
+$sql = "delete from rentals where IdAnnounce = $idannounce ;";
 
 if (mysqli_query($con, $sql)) {
-    $sql = "update annouces set Available = false where IdAnnounce = $idannounce;";
+    $sql = "update annouces set Available = true where IdAnnounce = $idannounce ;";
     if (mysqli_query($con, $sql)) {
         echo json_encode(array(
             "statusCode"=>200

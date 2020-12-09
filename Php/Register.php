@@ -7,7 +7,6 @@ $phonenumber = mysqli_real_escape_string($con,$_POST['phonenumber']);
 $register_email = mysqli_real_escape_string($con,$_POST['email']);
 $register_password = mysqli_real_escape_string($con,$_POST['password']);
 $username = mysqli_real_escape_string($con,$_POST['username']);
-$register_password = password_hash($register_password, PASSWORD_DEFAULT);
 
 
 $sql = "insert into users (FirstName, Lastname, Email, PhoneNumber, Username, Password, LastConnection)

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Location de véhicule au Canada</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../CSS/styles.css" type="text/css">
+    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="../JS/Main.js"></script>
+    <script src="../JS/Get/ListOfCars.js"></script>
+    <script src="../JS/RenderingManager.js"></script>
+</head>
+<body>
+<header>
+    <button type="submit" id="btn_burger" onclick="openNav()"><i id="icon_btn_burger" class="fas fa-bars"></i></button>
+    <img class="logo" src="../Images/Logo.PNG" alt="logo" onclick="window.location = '../index.html'">
+    <div class="search">
+        <input id="searchBox" type="text" class="search_box" placeholder="Rechercher..."/>
+        <button type="submit" id="btn_search"><i class="fa fa-search"></i></button>
+    </div>
+
+    <nav>
+        <ul class="nav_links">
+            <li><a id="register" href="#"></a></li>
+        </ul>
+    </nav>
+    <a id="connexion">
+        <button id="btn_login"></button>
+    </a>
+</header>
+<div class="container">
+    <div id="main_body">
+        <div class="test">
+            <div id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <a href="index.html">Acceuil</a>
+                <a href="#">Mes locations</a>
+                <a href="#">Mes annonces</a>
+                <a href="#">Mon compte</a>
+            </div>
+        </div>
+        <h1 class="cards_title">Mes annonces (<span id="carCount">0</span>) : </h1>
+        <ul class="cards">
+
+        </ul>
+    </div>
+</div>
+</body>
+</html>

@@ -10,7 +10,7 @@
     <script src="../JS/Main.js"></script>
     <script src="../JS/Get/ListOfCars.js"></script>
     <script src="../JS/RenderingManager.js"></script>
-    <script src="../JS/Post/AddAnnounces.js"></script>
+    <script src="../JS/Post/EditAnnounces.js"></script>
 </head>
 <body>
 <header>
@@ -56,7 +56,7 @@
 
             <div class="input_container_addAnnounce input_container">
                 <i class="fas fa-users icon" style="color: black"></i>
-                <input class="field" type="number" id="seat_count" name="seatcount" step="1" min="1"
+                <input class="field" type="number" id="seatcount" name="seatcount" step="1" min="1"
                        placeholder="Nombre de passagers" required>
             </div>
 
@@ -83,7 +83,7 @@
             <h3>Ajoutez une photo pour attirer l'attention sur votre annonce</h3>
             <div id="hide">
                 <label class="hand-cursor">
-                    <input type="file" id="image" accept="image/*" name="fileToUpload" onchange="setImageText()" required>
+                    <input type="file" id="image" accept="image/*" name="fileToUpload" onchange="setImageText()" src="../Images/Logo.PNG" required>
                     <span id="addimage">
                         <i class="fas fa-camera-retro icon" id="icon_camera" style="font-size: 25px"></i>
                         <span class="photo_text hidden-xs" id="span_image_choice">Choisir image</span>
