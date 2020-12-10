@@ -179,7 +179,7 @@ function createCards(response, racine, page){
                                     </div>
                                 </div>
                             </div>
-                            <button class="btn">Voir l'article</button>
+                            <button class="btn">Voir le véhicule</button>
                         </li>
                     </a>
                 `;
