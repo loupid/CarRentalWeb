@@ -10,67 +10,82 @@
     <script src="https://rawgit.com/RobinHerbots/jquery.inputmask/3.x/dist/jquery.inputmask.bundle.js"></script>
     <script src="../JS/Main.js"></script>
     <script src="../JS/Get/ListOfCars.js"></script>
-    <script src="../JS/RenderingManager.js"></script>
     <script src="../JS/Post/Register.js"></script>
 </head>
 <body>
 <header>
     <img class="logo" src="../Images/Logo.PNG" alt="logo" onclick="window.location = '../index.html'">
 </header>
-<div class="register">
-    <p class="login_title">Inscription</p>
-    <form id="form" method="post">
-        <div class="login_credentials">
-            <div class="input_container_login">
-                <i class="fas fa-font icon" style="color: black"></i>
-                <input class="field" type="text" id="firstname" name="firstname"
-                       placeholder="Prénom" required>
-            </div>
-            <div class="input_container_login">
-                <i class="fas fa-bold icon" style="color: black"></i>
-                <input class="field" type="text" id="lastname" name="lastname"
-                       placeholder="Nom" required>
-            </div>
-            <div class="input_container_login">
-                <i class="fas fa-user icon" style="color: black"></i>
-                <input class="field" type="text" id="username" name="username"
-                       placeholder="Nom d'utilisateur" required>
-            </div>
-            <div class="input_container_login">
-                <i class="fas fa-at icon" style="color: black"></i>
-                <input class="field" type="email" id="email" name="email"
-                       placeholder="Email" required>
-            </div>
-            <div class="input_container_login">
-                <i class="fas fa-phone-square-alt icon" style="color: black"></i>
-                <input class="field" type="text" id="phonenumber" name="phonenumber"
-                       placeholder="Numéro de téléphone" required>
-            </div>
-            <div class="input_container_login">
-                <i class="fas fa-lock icon" style="color: black"></i>
-                <input class="field" type="password" id="password" name="password"
-                       placeholder="Mot de passe" required><br>
-            </div>
 
-            <div class="input_container_login">
-                <i class="fas fa-lock icon" style="color: black"></i>
-                <input class="field" type="password" id="repeatpassword" name="repeatpassword"
-                       placeholder="Confimer le mot de passe" required><br>
-            </div>
 
-<!--        <div class="register_privacy">-->
-<!--            <div class="register_privacy_text">-->
-<!--                <i class="fas fa-user-shield" id="icon_privacy"></i>-->
-<!--                <h1>Voulez-vous rendre vos informations publiques ?</h1>-->
-<!--            </div>-->
-<!--            <label class="register_switch">-->
-<!--                <input type="checkbox" name="showdata">-->
-<!--                <span class="register_slider round"></span>-->
-<!--            </label>-->
-<!--        </div>-->
+<div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="../index.html">Acceuil</a>
+    <a href="addAnnounce.html">Ajouter une annonce</a>
+    <a href="myRents.html">Mes locations</a>
+    <a href="myAnnounces.html">Mes annonces</a>
+    <a href="editRegister.html">Mon compte</a>
+</div>
+<div class="container">
+    <div id="main_body">
+        <div class="test">
+            <div class="register">
+                <p class="login_title">Inscription</p>
+                <form id="form" method="post">
+                    <div class="login_credentials">
+                        <div class="input_container_login">
+                            <i class="fas fa-font icon" style="color: black"></i>
+                            <input class="field" type="text" id="firstname" name="firstname"
+                                   placeholder="Prénom" required>
+                        </div>
+                        <div class="input_container_login">
+                            <i class="fas fa-bold icon" style="color: black"></i>
+                            <input class="field" type="text" id="lastname" name="lastname"
+                                   placeholder="Nom" required>
+                        </div>
+                        <div class="input_container_login">
+                            <i class="fas fa-user icon" style="color: black"></i>
+                            <input class="field" type="text" id="username" name="username"
+                                   placeholder="Nom d'utilisateur" required>
+                        </div>
+                        <div class="input_container_login">
+                            <i class="fas fa-at icon" style="color: black"></i>
+                            <input class="field" type="email" id="email" name="email"
+                                   placeholder="Email" required>
+                        </div>
+                        <div class="input_container_login">
+                            <i class="fas fa-phone-square-alt icon" style="color: black"></i>
+                            <input class="field" type="text" id="phonenumber" name="phonenumber"
+                                   placeholder="Numéro de téléphone" minlength="14" maxlength="14" required>
+                        </div>
+                        <div class="input_container_login">
+                            <i class="fas fa-lock icon" style="color: black"></i>
+                            <input class="field" type="password" id="password" name="password"
+                                   placeholder="Mot de passe" required><br>
+                        </div>
+
+                        <div class="input_container_login">
+                            <i class="fas fa-lock icon" style="color: black"></i>
+                            <input class="field" type="password" id="repeatpassword" name="repeatpassword"
+                                   placeholder="Confimer le mot de passe" required><br>
+                        </div>
+
+            <!--        <div class="register_privacy">-->
+            <!--            <div class="register_privacy_text">-->
+            <!--                <i class="fas fa-user-shield" id="icon_privacy"></i>-->
+            <!--                <h1>Voulez-vous rendre vos informations publiques ?</h1>-->
+            <!--            </div>-->
+            <!--            <label class="register_switch">-->
+            <!--                <input type="checkbox" name="showdata">-->
+            <!--                <span class="register_slider round"></span>-->
+            <!--            </label>-->
+            <!--        </div>-->
+                    </div>
+                    <button type="submit" id="btn_confirm_login">S'inscrire</button>
+                </form>
+            </div>
         </div>
-        <button type="submit" id="btn_confirm_login">S'inscrire</button>
-    </form>
+    </div>
 </div>
 </body>
 </html>
