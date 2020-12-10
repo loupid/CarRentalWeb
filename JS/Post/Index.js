@@ -1,4 +1,4 @@
-$(document).ready((e) => {
+$(document).ready(() => {
 
     setNavBar('');
 
@@ -15,5 +15,4 @@ $(document).ready((e) => {
         });
         GetAllAvailableCarsList(x,true);
     });
-
 })

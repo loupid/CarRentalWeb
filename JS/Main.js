@@ -19,20 +19,20 @@ function setNavBar(racine){
     let $register = $('#register');
     if (username) {
         $('#btn_login').text(username);
-        $register.text('Se déconnecter').attr('href', racine + 'HTML/register.html');
+        $register.text('Se déconnecter').attr('href', racine + 'HTML/register.html').attr('onclick', 'deconnexion()');
     } else {
-        $('#connexion').attr('href', 'HTML/login.html')
+        $('#connexion').attr('href', racine +'HTML/login.html')
     }
 
     if ($register.text() === "S'inscrire") {
-        $register.attr("href", 'HTML/register.html');
+        $register.attr("href", racine +'HTML/register.html');
     }
 
     if ($register.text() === "Se déconnecter") {
-        $register.attr("href", 'HTML/login.html');
+        $register.attr("href", racine +'HTML/login.html');
     }
 
-    $('#btn_burger').attr('onclick',openNav());
+    $('#btn_burger').attr('onclick', 'openNav()');
 }
 
 function isRegisterValid(data){
@@ -78,8 +78,11 @@ function getAnnounce(){
             imgUrl = !imageExists(imgUrl) ? "../Images/default_car.png" : imgUrl;
 
             $('#imgfilepath').attr('src', imgUrl);
+            $("#span_image_choice").text(result['imgfilepath'])
+            $("#checkbox").prop("checked", result['available'] === '1');
 
-            $.each($('#form input').serializeArray(), function() {
+
+            $.each($(`#form input`).serializeArray(), function() {
                 $('#'+this.name).val(result[this.name]);
             });
 
@@ -95,10 +98,8 @@ function setImageText() {
 
 function imageExists(image_url){
     let http = new XMLHttpRequest();
-
     http.open('HEAD', image_url, false);
     http.send();
-
     return http.status !== 404;
 }
 
@@ -124,4 +125,65 @@ function getCookie(cname) {
         }
     }
     return "";
+}
+
+function IsConnected(){
+    return getCookie('userid') !== "";
+}
+
+function deconnexion(){
+    setCookie('userid','', -1);
+    setCookie('username','', -1);
+}
+
+function createCards(response, racine, page){
+    let cards = $(".cards");
+    cards.empty();
+    let len = response.length;
+    $("#carCount").text(len.toString());
+    for (let i = 0; i < len; i++) {
+        let id = response[i].idannounce;
+        let brandname = response[i].brandname;
+        let carname = response[i].carname;
+        let seatcount = response[i].seatcount;
+        let title = response[i].title;
+        let price = response[i].price;
+        let location = response[i].location;
+        let imgFileName = response[i].imgfilepath;
+
+        let imgUrl = racine + "Images/" + imgFileName;
+        imgUrl = !imageExists(imgUrl) ? racine + "Images/default_car.png" : imgUrl;
+
+        let card = `
+                    <a class='card_item' href="${racine}HTML/${page}.html?id=${id}">
+                        <li class='card'>
+                            <div class='car_image' style='background-image: url("${imgUrl}")'></div>
+                            <div class='vehicle_details'>
+                                <span class="title"> ${title}</span><br>
+                                <div class="spec">
+                                    <div>
+                                        <i class=\"fas fa-car-side icon\"></i> Voiture 
+                                        <span>${brandname} ${carname}</span>
+                                    </div>
+                                    <div>
+                                        <i class=\"fas fa-users icon\"></i> Nombre de passagers
+                                        <span>${seatcount} passagers</span>
+                                    </div>
+                                    <div>
+                                        <i class=\"fas fa-dollar-sign icon\"></i> Prix
+                                        <span>${price} $/jour</span>
+                                    </div>
+                                    <div>
+                                        <i class=\"fas fa-map-marked-alt icon\"></i> Localisation
+                                        <span>${location}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="btn">Voir l'article</button>
+                        </li>
+                    </a>
+                `;
+
+        cards.append(card);
+    }
 }

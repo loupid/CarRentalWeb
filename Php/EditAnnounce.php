@@ -31,14 +31,7 @@ where IdAnnounce = '$idannounce';";
 
 if (mysqli_query($con, $sql)) {
     echo json_encode(array(
-        "idannounce" => $idannounce,
-        "brandname" => $brandname,
-        "carname" => $carname,
-        "seatcount" => $seatcount,
-        "location" => $location,
-        "price" => $price,
-        "title" => $title,
-        "imgfilepath" => $imgfilepath
+        "statusCode"=> 200
     ));
 }
 else {

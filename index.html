@@ -8,7 +8,7 @@
 </head>
 <body>
 <header>
-    <button type="submit" id="btn_burger" onclick="openNav()"><i id="icon_btn_burger" class="fas fa-bars"></i></button>
+    <button type="submit" id="btn_burger" onclick='openNav()'><i id="icon_btn_burger" class="fas fa-bars"></i></button>
     <img class="logo" src="Images/Logo.PNG" alt="logo" onclick="window.location = 'index.html'">
     <div class="search">
         <input id="searchBox" type="text" class="search_box" placeholder="Rechercher..."/>
@@ -31,6 +31,7 @@
             <div id="mySidenav" class="sidenav">
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                 <a href="index.html">Acceuil</a>
+                <a href="HTML/addAnnounce.html">Ajouter une annonce</a>
                 <a href="HTML/myRents.html">Mes locations</a>
                 <a href="HTML/myAnnounces.html">Mes annonces</a>
                 <a href="HTML/editRegister.html">Mon compte</a>
@@ -74,7 +75,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="JS/Main.js"></script>
 <script src="JS/Get/ListOfCars.js"></script>
-<script src="JS/RenderingManager.js"></script>
 <script src="JS/Post/Index.js"></script>
 </body>
 </html>
