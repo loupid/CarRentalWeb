@@ -16,24 +16,30 @@
 <header>
     <img class="logo" src="../Images/Logo.PNG" alt="logo" onclick="window.location = '../index.html'">
 </header>
-<div class="login">
-    <p class="login_title">Connexion</p>
-    <form id="form" method="post">
-        <div class="login_credentials">
-            <div class="input_container_login">
-                <i class="fas fa-at icon" style="color: black"></i>
-                <input class="field" type="text" id="login_email" name="username"
-                       placeholder="Email ou nom d'utilisateur" required>
-            </div>
-            <div class="input_container_login">
-                <i class="fas fa-lock icon" style="color: black"></i>
-                <input class="field" type="password" id="login_password" name="password"
-                       placeholder="Mot de passe" required><br>
+<div class="container">
+    <div id="main_body">
+        <div class="test">
+            <div class="login">
+                <p class="login_title">Connexion</p>
+                <form id="form" method="post">
+                    <div class="login_credentials">
+                        <div class="input_container_login">
+                            <i class="fas fa-at icon" style="color: black"></i>
+                            <input class="field" type="text" id="login_email" name="username"
+                                   placeholder="Email ou nom d'utilisateur" required>
+                        </div>
+                        <div class="input_container_login">
+                            <i class="fas fa-lock icon" style="color: black"></i>
+                            <input class="field" type="password" id="login_password" name="password"
+                                   placeholder="Mot de passe" required><br>
+                        </div>
+                    </div>
+                    <button type="submit" id="btn_confirm_login">Se connecter</button>
+                </form>
+                <a id="forgot_password" href="register.html">Créer un compte</a>
             </div>
         </div>
-        <button type="submit" id="btn_confirm_login">Se connecter</button>
-    </form>
-    <a id="forgot_password" href="register.html">Créer un compte</a>
+    </div>
 </div>
 </body>
 </html>

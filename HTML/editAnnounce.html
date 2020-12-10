@@ -24,95 +24,110 @@
         <button id="btn_login">Se connecter</button>
     </a>
 </header>
-<form id="form" method="post">
-    <div class="add_announce">
-        <div class="add_announce_container announce_media">
-            <h1>Médias</h1>
-            <hr>
-            <h3>Photo de votre annonce</h3>
-            <div id="hide">
-                <img id="imgfilepath" src="../Images/default_car.png" alt="" style="width: 100%; height: 100%">
-                <label class="hand-cursor">
-                    <input type="file" id="image" accept="image/*" name="fileToUpload" onchange="setImageText()">
-                    <span id="addimage">
-                        <i class="fas fa-camera-retro icon" id="icon_camera" style="font-size: 25px"></i>
-                        <span class="photo_text hidden-xs" id="span_image_choice">Choisir image</span>
-                    </span>
-                </label>
-            </div>
-        </div>
 
-        <div class="add_announce_container announce_details">
-            <h1>Détails de l'annonce</h1>
-            <hr>
-            <div class="input_container_addAnnounce input_container">
-                <i class="fas fa-font icon" style="color: black"></i>
-                <input class="field" type="text" id="title" name="title"
-                       placeholder="Titre de l'annonce" required>
-            </div>
+<div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="../index.html">Acceuil</a>
+    <a href="addAnnounce.html">Ajouter une annonce</a>
+    <a href="myRents.html">Mes locations</a>
+    <a href="myAnnounces.html">Mes annonces</a>
+    <a href="editRegister.html">Mon compte</a>
+</div>
+<div class="test">
+    <div class="container">
+        <div id="main_body">
+            <form id="form" method="post">
+                <div class="add_announce">
+                    <div class="add_announce_container announce_media">
+                        <h1>Médias</h1>
+                        <hr>
+                        <h3>Photo de votre annonce</h3>
+                        <div id="hide">
+                            <img id="imgfilepath" src="../Images/default_car.png" alt="" style="width: 100%; height: 100%">
+                            <label class="hand-cursor">
+                                <input type="file" id="image" accept="image/*" name="fileToUpload" onchange="setImageText()">
+                                <span id="addimage">
+                                    <i class="fas fa-camera-retro icon" id="icon_camera" style="font-size: 25px"></i>
+                                    <span class="photo_text hidden-xs" id="span_image_choice">Choisir image</span>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
 
-            <div class="input_container_addAnnounce input_container">
-                <i class="fas fa-car icon" style="color: black"></i>
-                <input class="field" type="text" id="brandname" name="brandname"
-                       placeholder="Marque" required>
-            </div>
+                    <div class="add_announce_container announce_details">
+                        <h1>Détails de l'annonce</h1>
+                        <hr>
+                        <div class="input_container_addAnnounce input_container">
+                            <i class="fas fa-font icon" style="color: black"></i>
+                            <input class="field" type="text" id="title" name="title"
+                                   placeholder="Titre de l'annonce" required>
+                        </div>
 
-            <div class="input_container_addAnnounce input_container">
-                <i class="fas fa-car-side icon" style="color: black"></i>
-                <input class="field" type="text" id="carname" name="carname"
-                       placeholder="Modèle" required>
-            </div>
+                        <div class="input_container_addAnnounce input_container">
+                            <i class="fas fa-car icon" style="color: black"></i>
+                            <input class="field" type="text" id="brandname" name="brandname"
+                                   placeholder="Marque" required>
+                        </div>
 
-            <div class="input_container_addAnnounce input_container">
-                <i class="fas fa-th icon" style="color: black"></i>
-                <input class="field" type="text" id="category" name="category"
-                       placeholder="Catégorie" required>
-            </div>
+                        <div class="input_container_addAnnounce input_container">
+                            <i class="fas fa-car-side icon" style="color: black"></i>
+                            <input class="field" type="text" id="carname" name="carname"
+                                   placeholder="Modèle" required>
+                        </div>
 
-            <div class="input_container_addAnnounce input_container">
-                <i class="fas fa-users icon" style="color: black"></i>
-                <input class="field" type="number" id="seatcount" name="seatcount" step="1" min="1"
-                       placeholder="Nombre de passagers" required>
-            </div>
+                        <div class="input_container_addAnnounce input_container">
+                            <i class="fas fa-th icon" style="color: black"></i>
+                            <input class="field" type="text" id="category" name="category"
+                                   placeholder="Catégorie" required>
+                        </div>
 
-            <div class="input_container_addAnnounce input_container">
-                <i class="fas fa-comment-alt icon" style="color: black"></i>
-                <textarea name="description" class="field" id="description" rows="5" style="color: black" placeholder="Description" required></textarea>
-            </div>
+                        <div class="input_container_addAnnounce input_container">
+                            <i class="fas fa-users icon" style="color: black"></i>
+                            <input class="field" type="number" id="seatcount" name="seatcount" step="1" min="1"
+                                   placeholder="Nombre de passagers" required>
+                        </div>
 
-            <div class="add_announce_available">
-                <div class="add_announce_available_text input_container">
-                    <i class="fas fa-clipboard-check" id="icon_available" style="font-size: 25px"></i>
-                    <h2>Disponible ?</h2>
+                        <div class="input_container_addAnnounce input_container">
+                            <i class="fas fa-comment-alt icon" style="color: black"></i>
+                            <textarea name="description" class="field" id="description" rows="5" style="color: black" placeholder="Description" required></textarea>
+                        </div>
+
+                        <div class="add_announce_available">
+                            <div class="add_announce_available_text input_container">
+                                <i class="fas fa-clipboard-check" id="icon_available" style="font-size: 25px"></i>
+                                <h2>Disponible ?</h2>
+                            </div>
+                            <label class="register_switch">
+                                <input id="checkbox" type="checkbox" name="available">
+                                <span class="register_slider round"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="add_announce_container announce_localisation">
+                        <h1>Emplacement</h1>
+                        <hr>
+                        <div class="input_container">
+                            <i class="fas fa-map-marked-alt icon"></i>
+                            <input class="field announce_input_city" type="text" id="location" name="location"
+                                   placeholder="Entrez une ville ou une adresse" required>
+                        </div>
+                    </div>
+
+                    <div class="add_announce_container announce_price">
+                        <h1>Prix</h1>
+                        <hr>
+                        <div class="input_container_addAnnounce input_container">
+                            <i class="fas fa-dollar-sign icon" style="color: black"></i>
+                            <input class="field" type="number" id="price" name="price"
+                                   placeholder="Prix par jour" min="0.01" step="0.01" required>
+                        </div>
+                    </div>
+                    <button type="submit" id="btn_confirm_add_announce">Publier l'annonce</button>
                 </div>
-                <label class="register_switch">
-                    <input id="checkbox" type="checkbox" name="available">
-                    <span class="register_slider round"></span>
-                </label>
-            </div>
+            </form>
         </div>
-
-        <div class="add_announce_container announce_localisation">
-            <h1>Emplacement</h1>
-            <hr>
-            <div class="input_container">
-                <i class="fas fa-map-marked-alt icon"></i>
-                <input class="field announce_input_city" type="text" id="location" name="location"
-                       placeholder="Entrez une ville ou une adresse" required>
-            </div>
-        </div>
-
-        <div class="add_announce_container announce_price">
-            <h1>Prix</h1>
-            <hr>
-            <div class="input_container_addAnnounce input_container">
-                <i class="fas fa-dollar-sign icon" style="color: black"></i>
-                <input class="field" type="number" id="price" name="price"
-                       placeholder="Prix par jour" min="0.01" step="0.01" required>
-            </div>
-        </div>
-        <button type="submit" id="btn_confirm_add_announce">Publier l'annonce</button>
     </div>
-</form>
+</div>
 </body>
 </html>
