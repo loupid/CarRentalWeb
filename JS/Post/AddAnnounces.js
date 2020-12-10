@@ -2,7 +2,7 @@ $(document).ready(() => {
     setNavBar('../')
     $("#checkbox").prop("checked", true);
 
-    $('#formAdd').submit(function (e) {
+    $('#form').submit(function (e) {
         let file_data = $('#image').prop('files')[0];
         let form_data = new FormData();
         form_data.append('file', file_data);
