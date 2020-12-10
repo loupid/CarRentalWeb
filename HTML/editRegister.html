@@ -10,7 +10,6 @@
     <script src="https://rawgit.com/RobinHerbots/jquery.inputmask/3.x/dist/jquery.inputmask.bundle.js"></script>
     <script src="../JS/Main.js"></script>
     <script src="../JS/Get/ListOfCars.js"></script>
-    <script src="../JS/RenderingManager.js"></script>
     <script src="../JS/Post/Register.js"></script>
 </head>
 <body>
@@ -57,7 +56,7 @@
                         <div class="input_container_login">
                             <i class="fas fa-phone-square-alt icon" style="color: black"></i>
                             <input class="field" type="text" id="phonenumber" name="phonenumber"
-                                   placeholder="Numéro de téléphone" required>
+                                   placeholder="Numéro de téléphone" minlength="14" maxlength="14" required>
                         </div>
                         <div class="input_container_login">
                             <i class="fas fa-lock icon" style="color: black"></i>
