@@ -5,7 +5,7 @@ $iduser = mysqli_real_escape_string($con,$_POST['iduser']);
 $password = mysqli_real_escape_string($con,$_POST['password']);
 
 $sql = "update users 
-set Password = '$password', 
+set Password = '$password'
 where IdUser = '$iduser';";
 
 if (mysqli_query($con, $sql)) {

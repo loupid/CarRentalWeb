@@ -18,11 +18,11 @@ values ('$iduser','$title','$brand', '$category', '$description', '$carname', '$
 
 if (mysqli_query($con, $sql)) {
     echo json_encode(array(
-        "statusCode"=>200
+        "statusCode" => 200
         ));
 }
 else {
     echo json_encode(array(
-        "statusCode"=> $con->error
+        "statusCode" => $con->error
         ));
 }

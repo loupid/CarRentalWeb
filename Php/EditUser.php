@@ -14,8 +14,8 @@ set FirstName = '$firstname',
     Lastname = '$lastname',
     Email = '$register_email',
     PhoneNumber = '$phonenumber',
-    Username = '$username', 
-where IdUser = '$iduser';";
+    Username = '$username' 
+where IdUser = $iduser;";
 
 
 if (mysqli_query($con, $sql)) {
