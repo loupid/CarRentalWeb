@@ -3,7 +3,6 @@ include "Database/Config.php";
 
 $uname = mysqli_real_escape_string($con,$_POST['username']);
 $password = mysqli_real_escape_string($con,$_POST['password']);
-//$password = password_hash($password, PASSWORD_DEFAULT);
 
 if ($uname != "" && $password != ""){
     $sql_query = "select IdUser as id, Username as username, count(*)as cntUser from users 
