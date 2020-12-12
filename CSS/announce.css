@@ -37,12 +37,13 @@ hr {
 }
 
 .add_announce_container input, textarea{
-    width: calc(100% - 70px);
+    width: calc(100% - 0px);
 }
 
 .add_announce_available {
     display: flex;
     vertical-align: middle;
+    width: 100%;
 }
 
 .add_announce_available_text {

@@ -43,9 +43,11 @@
                         <hr>
                         <h3>Photo de votre annonce</h3>
                         <div id="hide">
-                            <img id="imgfilepath" src="../Images/default_car.png" alt="" style="width: 100%; height: 100%">
+                            <img id="imgfilepath" src="../Images/default_car.png" alt=""
+                                 style="width: 100%; height: 100%">
                             <label class="hand-cursor">
-                                <input type="file" id="image" accept="image/*" name="fileToUpload" onchange="setImageText()">
+                                <input type="file" id="image" accept="image/*" name="fileToUpload"
+                                       onchange="setImageText()">
                                 <span id="addimage">
                                     <i class="fas fa-camera-retro icon" id="icon_camera" style="font-size: 25px"></i>
                                     <span class="photo_text hidden-xs" id="span_image_choice">Choisir image</span>
@@ -89,7 +91,8 @@
 
                         <div class="input_container_addAnnounce input_container">
                             <i class="fas fa-comment-alt icon" style="color: black"></i>
-                            <textarea name="description" class="field" id="description" rows="5" style="color: black" placeholder="Description" required></textarea>
+                            <textarea name="description" class="field" id="description" rows="5" style="color: black"
+                                      placeholder="Description" required></textarea>
                         </div>
 
                         <div class="add_announce_available">
@@ -123,8 +126,10 @@
                                    placeholder="Prix par jour" min="0.01" step="0.01" required>
                         </div>
                     </div>
-                    <button type="submit" id="btn_confirm_add_announce">Modifier l'annonce</button>
-                    <button type="submit" id="btn_confirm_remove_announce">Effacer l'annonce</button>
+                    <div style="display: flex; width: 110%">
+                        <button style="margin-right: 1%" type="submit" id="btn_confirm_add_announce">Modifier l'annonce</button>
+                        <button style="margin-left: 1%" type="submit" id="btn_confirm_remove_announce">Effacer l'annonce</button>
+                    </div>
                 </div>
             </form>
         </div>
