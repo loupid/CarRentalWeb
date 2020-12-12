@@ -18,7 +18,6 @@ set FirstName = '$firstname',
 where IdUser = '$iduser';";
 
 
-
 if (mysqli_query($con, $sql)) {
     echo json_encode(array(
         "statusCode"=> 200
