@@ -1,6 +1,6 @@
 $(document).ready(() => {
 
-    setNavBar('');
+    setNavBar('../');
 
     GetOwnAnnouncesCarsList();
 
